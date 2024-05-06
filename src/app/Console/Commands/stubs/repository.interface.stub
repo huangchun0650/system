@@ -1,0 +1,9 @@
+<?php
+
+namespace YFDev\System\App\Repositories\DummyNamespace;
+
+use YFDev\System\App\Repositories\BaseRepositoryInterface;
+
+interface DummyClassRepositoryInterface extends BaseRepositoryInterface
+{
+}

@@ -1,0 +1,60 @@
+{
+    "name": "yfdev/system",
+    "description": "英富開發 後台包",
+    "type": "metapackage",
+    "autoload": {
+        "psr-4": {
+            "YFDev\\System\\": "src/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/"
+        },
+        "files": [
+            "src/app/Helpers/helpers.php",
+            "src/app/Helpers/database.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Jim"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "spatie/laravel-permission": "^5.2",
+        "huang_chun/transform-api": "^1.1.0",
+        "laravel/framework": "^10.0",
+        "laravel/horizon": "^5.21",
+        "laravel/sanctum": "^3.2",
+        "laravel/scout": "^10.2",
+        "laravel/socialite": "^5.8",
+        "laravel/tinker": "^2.7",
+        "meilisearch/meilisearch-php": "^1.2",
+        "predis/predis": "^2.2",
+        "pusher/pusher-php-server": "^7.2",
+        "intervention/image": "^2.7",
+        "jenssegers/agent": "^2.6",
+        "php-open-source-saver/jwt-auth": "^2.1",
+        "spatie/laravel-medialibrary": "^10.0.0",
+        "laravel-notification-channels/telegram": "^4.0",
+        "mews/captcha": "^3.3",
+        "mews/purifier": "^3.4",
+        "opcodesio/log-viewer": "^3.0",
+        "teckwei1993/laravel-otp": "^1.0",
+        "simplesoftwareio/simple-qrcode": "^4.2"
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
+    },
+    "require-dev": {
+        "brianium/paratest": "^7.0",
+        "fakerphp/faker": "^1.9.1",
+        "lanin/laravel-api-debugger": "^4.0",
+        "laravel/pint": "^1.0",
+        "mockery/mockery": "^1.4.4",
+        "nunomaduro/collision": "^7.0",
+        "phpunit/phpunit": "^10.0",
+        "spatie/laravel-ignition": "^2.0"
+    }
+}

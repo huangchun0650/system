@@ -1,0 +1,43 @@
+<?php
+
+namespace YFDev\System\App\Http\Controllers;
+
+use YFDev\System\App\Models\DummyNamespace;
+use YFDev\System\App\Services\DummyNamespace\DummyClassService;
+use YFDev\System\App\Http\Requests\DummyNamespace\CreateRequest;
+use YFDev\System\App\Http\Requests\DummyNamespace\UpdateRequest;
+use YFDev\System\App\Http\Requests\DummyNamespace\ListRequest;
+
+class DummyClassController extends Controller
+{
+    protected $DummyService;
+
+    public function __construct(DummyClassService $DummyService)
+    {
+        $this->DummyService = $DummyService;
+    }
+
+    public function list(ListRequest $request) {
+        return $this->DummyService->list();
+    }
+
+    public function detail(DummyNamespace DummyModel)
+    {
+        return $this->DummyService->detail(DummyModel);
+    }
+
+    public function store(CreateRequest $request)
+    {
+        return $this->DummyService->store();
+    }
+
+    public function update(DummyNamespace DummyModel, UpdateRequest $request)
+    {
+        return $this->DummyService->update(DummyModel);
+    }
+
+    public function destroy(DummyNamespace DummyModel)
+    {
+        return $this->DummyService->destroy(DummyModel);
+    }
+}

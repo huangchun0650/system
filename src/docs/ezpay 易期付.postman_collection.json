@@ -1,0 +1,6966 @@
+{
+	"info": {
+		"_postman_id": "cd711e40-7a29-4d99-8804-1f028d280e8d",
+		"name": "ezpay 易期付",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "後台管理者",
+			"item": [
+				{
+					"name": "Installment 分期設定",
+					"item": [
+						{
+							"name": "取得分期型列表",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/installment?page=1&prePage=5&sortBy=id&orderBy=asc",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"installment"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "prePage",
+											"value": "5"
+										},
+										{
+											"key": "sortBy",
+											"value": "id"
+										},
+										{
+											"key": "orderBy",
+											"value": "asc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "取得選項組",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/installment/options",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"installment",
+										"options"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "取得分期型 詳細資料",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/installment/9",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"installment",
+										"9"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "建立分期型",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"分期型F\",\n    \"identities\": [\n        {\n            \"identity\": \"一般\",\n            \"options\": [\n                {\n                    \"periods\": 4,\n                    \"interestRate\": 0\n                },\n                {\n                    \"periods\": 8,\n                    \"interestRate\": 0\n                },\n                {\n                    \"periods\": 12,\n                    \"interestRate\": 2.56\n                },\n                {\n                    \"periods\": 16,\n                    \"interestRate\": 4.23\n                }\n            ]\n        },\n        {\n            \"identity\": \"學生\",\n            \"options\": [\n                {\n                    \"periods\": 4,\n                    \"interestRate\": 0\n                },\n                {\n                    \"periods\": 8,\n                    \"interestRate\": 0\n                },\n                {\n                    \"periods\": 12,\n                    \"interestRate\": 2.56\n                },\n                {\n                    \"periods\": 16,\n                    \"interestRate\": 4.23\n                },\n                {\n                    \"periods\": 18,\n                    \"interestRate\": 5.12\n                }\n            ]\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/installment",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"installment"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "刪除分期型",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/installment/7",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"installment",
+										"7"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "修改分期型",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"分期型B\",\n    \"identities\": [\n        {\n            \"identity\": \"一般\",\n            \"options\": [\n                {\n                    \"periods\": 6,\n                    \"interestRate\": 0\n                },\n                {\n                    \"periods\": 12,\n                    \"interestRate\": 0\n                },\n                {\n                    \"periods\": 15,\n                    \"interestRate\": 2.70\n                },\n                {\n                    \"periods\": 18,\n                    \"interestRate\": 5.46\n                }\n            ]\n        },\n        {\n            \"identity\": \"學生\",\n            \"options\": [\n                {\n                    \"periods\": 6,\n                    \"interestRate\": 0\n                },\n                {\n                    \"periods\": 12,\n                    \"interestRate\": 0\n                },\n                {\n                    \"periods\": 15,\n                    \"interestRate\": 2.70\n                },\n                {\n                    \"periods\": 18,\n                    \"interestRate\": 5.46\n                },\n                {\n                    \"periods\": 21,\n                    \"interestRate\": 8.20\n                },\n                {\n                    \"periods\": 24,\n                    \"interestRate\": 10.92\n                }\n            ]\n        },\n        {\n            \"identity\": \"軍職\",\n            \"options\": [\n                {\n                    \"periods\": 6,\n                    \"interestRate\": 0\n                },\n                {\n                    \"periods\": 12,\n                    \"interestRate\": 0\n                },\n                {\n                    \"periods\": 15,\n                    \"interestRate\": 0\n                },\n                {\n                    \"periods\": 18,\n                    \"interestRate\": 2.70\n                },\n                {\n                    \"periods\": 21,\n                    \"interestRate\": 5.46\n                },\n                {\n                    \"periods\": 24,\n                    \"interestRate\": 8.20\n                },\n                {\n                    \"periods\": 30,\n                    \"interestRate\": 9.64\n                },\n                {\n                    \"periods\": 36,\n                    \"interestRate\": 10.92\n                }\n            ]\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/installment/3",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"installment",
+										"3"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Products 商品",
+					"item": [
+						{
+							"name": "取得商品選項組",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/product/options",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"product",
+										"options"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "取得商品列表",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/product",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"product"
+									],
+									"query": [
+										{
+											"key": "regionId",
+											"value": "6",
+											"disabled": true
+										},
+										{
+											"key": "brandId",
+											"value": "15",
+											"disabled": true
+										},
+										{
+											"key": "page",
+											"value": "2",
+											"disabled": true
+										},
+										{
+											"key": "prePage",
+											"value": "7",
+											"disabled": true
+										},
+										{
+											"key": "sortBy",
+											"value": "id",
+											"disabled": true
+										},
+										{
+											"key": "orderBy",
+											"value": "asc",
+											"disabled": true
+										},
+										{
+											"key": "isLaunched",
+											"value": "0",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "搜尋商品",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/product/search?param=gogoro",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"product",
+										"search"
+									],
+									"query": [
+										{
+											"key": "param",
+											"value": "gogoro"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "取得商品明細",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/product/1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"product",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "建立商品",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"【Gogoro】Gogoro Premium(GB6RD)\",\n    \"regionId\": 6,\n    \"brandId\": 18,\n    \"description\": \"\",\n    \"specifications\": [\n        \"晶礦銀\",\n        \"晶鑽灰\"\n    ],\n    \"installmentTypeId\": 1,\n    \"price\": 86800,\n    \"mediaIds\": {\n        \"main\": [\n            2\n        ],\n        \"additional\": [\n            3,\n            4\n        ]\n    },\n    \"webContent\": \"<table class=\\\"table table-bordered ke-zeroborder\\\" style=\\\"margin:0px 0px 20px;padding:0px;width:920px;color:#212529;border:0px;font-family:&quot;font-size:16px;background-color:#F8F8F8;\\\" bordercolor=\\\"#999999\\\">\\n\\t<tbody>\\n\\t\\t<tr>\\n\\t\\t\\t<td style=\\\"text-align:center;vertical-align:top;border:1px solid #DEE2E6;\\\">\\n\\t\\t\\t\\t期數\\n\\t\\t\\t</td>\\n\\t\\t\\t<td style=\\\"text-align:center;vertical-align:top;border:1px solid #DEE2E6;\\\">\\n\\t\\t\\t\\t6\\n\\t\\t\\t</td>\\n\\t\\t\\t<td style=\\\"text-align:center;vertical-align:top;border:1px solid #DEE2E6;\\\">\\n\\t\\t\\t\\t9\\n\\t\\t\\t</td>\\n\\t\\t\\t<td style=\\\"text-align:center;vertical-align:top;border:1px solid #DEE2E6;\\\">\\n\\t\\t\\t\\t12\\n\\t\\t\\t</td>\\n\\t\\t\\t<td style=\\\"text-align:center;vertical-align:top;border:1px solid #DEE2E6;\\\">\\n\\t\\t\\t\\t15\\n\\t\\t\\t</td>\\n\\t\\t</tr>\\n\\t\\t<tr>\\n\\t\\t\\t<td style=\\\"text-align:center;\\\">\\n\\t\\t\\t\\t<span style=\\\"color:#212529;\\\">手</span><span style=\\\"color:#212529;\\\">續費</span><br />\\n\\t\\t\\t</td>\\n\\t\\t\\t<td style=\\\"text-align:center;\\\">\\n\\t\\t\\t\\t0.00%<br />\\n\\t\\t\\t</td>\\n\\t\\t\\t<td style=\\\"text-align:center;\\\">\\n\\t\\t\\t\\t<span style=\\\"color:#212529;\\\">0.00%</span><br />\\n\\t\\t\\t</td>\\n\\t\\t\\t<td style=\\\"text-align:center;\\\">\\n\\t\\t\\t\\t<span style=\\\"color:#212529;\\\">0.00%</span><br />\\n\\t\\t\\t</td>\\n\\t\\t\\t<td style=\\\"text-align:center;\\\">\\n\\t\\t\\t\\t2.70%<br />\\n\\t\\t\\t</td>\\n\\t\\t</tr>\\n\\t\\t<tr>\\n\\t\\t\\t<td style=\\\"text-align:center;\\\">\\n\\t\\t\\t\\t<span style=\\\"color:#212529;\\\">期數</span><br />\\n\\t\\t\\t</td>\\n\\t\\t\\t<td style=\\\"text-align:center;\\\">\\n\\t\\t\\t\\t18<br />\\n\\t\\t\\t</td>\\n\\t\\t\\t<td style=\\\"text-align:center;\\\">\\n\\t\\t\\t\\t21<br />\\n\\t\\t\\t</td>\\n\\t\\t\\t<td style=\\\"text-align:center;\\\">\\n\\t\\t\\t\\t24<br />\\n\\t\\t\\t</td>\\n\\t\\t\\t<td>\\n\\t\\t\\t\\t<br />\\n\\t\\t\\t</td>\\n\\t\\t</tr>\\n\\t\\t<tr>\\n\\t\\t\\t<td style=\\\"text-align:center;\\\">\\n\\t\\t\\t\\t<span style=\\\"color:#212529;\\\">手</span><span style=\\\"color:#212529;\\\">續費</span><br />\\n\\t\\t\\t</td>\\n\\t\\t\\t<td style=\\\"text-align:center;\\\">\\n\\t\\t\\t\\t5.46%<br />\\n\\t\\t\\t</td>\\n\\t\\t\\t<td style=\\\"text-align:center;\\\">\\n\\t\\t\\t\\t8.20%<br />\\n\\t\\t\\t</td>\\n\\t\\t\\t<td style=\\\"text-align:center;\\\">\\n\\t\\t\\t\\t10.92%<br />\\n\\t\\t\\t</td>\\n\\t\\t\\t<td>\\n\\t\\t\\t\\t<br />\\n\\t\\t\\t</td>\\n\\t\\t</tr>\\n\\t</tbody>\\n</table>\\n<br />\",\n    \"mobileContent\": \"<table class=\\\"table table-bordered ke-zeroborder\\\" style=\\\"margin:0px 0px 20px;padding:0px;width:920px;color:#212529;border:0px;font-family:&quot;font-size:16px;background-color:#F8F8F8;\\\" bordercolor=\\\"#999999\\\">\\n\\t<tbody>\\n\\t\\t<tr>\\n\\t\\t\\t<td style=\\\"text-align:center;vertical-align:top;border:1px solid #DEE2E6;\\\">\\n\\t\\t\\t\\t期數\\n\\t\\t\\t</td>\\n\\t\\t\\t<td style=\\\"text-align:center;vertical-align:top;border:1px solid #DEE2E6;\\\">\\n\\t\\t\\t\\t6\\n\\t\\t\\t</td>\\n\\t\\t\\t<td style=\\\"text-align:center;vertical-align:top;border:1px solid #DEE2E6;\\\">\\n\\t\\t\\t\\t9\\n\\t\\t\\t</td>\\n\\t\\t\\t<td style=\\\"text-align:center;vertical-align:top;border:1px solid #DEE2E6;\\\">\\n\\t\\t\\t\\t12\\n\\t\\t\\t</td>\\n\\t\\t\\t<td style=\\\"text-align:center;vertical-align:top;border:1px solid #DEE2E6;\\\">\\n\\t\\t\\t\\t15\\n\\t\\t\\t</td>\\n\\t\\t</tr>\\n\\t\\t<tr>\\n\\t\\t\\t<td style=\\\"text-align:center;\\\">\\n\\t\\t\\t\\t<span style=\\\"color:#212529;\\\">手</span><span style=\\\"color:#212529;\\\">續費</span><br />\\n\\t\\t\\t</td>\\n\\t\\t\\t<td style=\\\"text-align:center;\\\">\\n\\t\\t\\t\\t0.00%<br />\\n\\t\\t\\t</td>\\n\\t\\t\\t<td style=\\\"text-align:center;\\\">\\n\\t\\t\\t\\t<span style=\\\"color:#212529;\\\">0.00%</span><br />\\n\\t\\t\\t</td>\\n\\t\\t\\t<td style=\\\"text-align:center;\\\">\\n\\t\\t\\t\\t<span style=\\\"color:#212529;\\\">0.00%</span><br />\\n\\t\\t\\t</td>\\n\\t\\t\\t<td style=\\\"text-align:center;\\\">\\n\\t\\t\\t\\t2.70%<br />\\n\\t\\t\\t</td>\\n\\t\\t</tr>\\n\\t\\t<tr>\\n\\t\\t\\t<td style=\\\"text-align:center;\\\">\\n\\t\\t\\t\\t<span style=\\\"color:#212529;\\\">期數</span><br />\\n\\t\\t\\t</td>\\n\\t\\t\\t<td style=\\\"text-align:center;\\\">\\n\\t\\t\\t\\t18<br />\\n\\t\\t\\t</td>\\n\\t\\t\\t<td style=\\\"text-align:center;\\\">\\n\\t\\t\\t\\t21<br />\\n\\t\\t\\t</td>\\n\\t\\t\\t<td style=\\\"text-align:center;\\\">\\n\\t\\t\\t\\t24<br />\\n\\t\\t\\t</td>\\n\\t\\t\\t<td>\\n\\t\\t\\t\\t<br />\\n\\t\\t\\t</td>\\n\\t\\t</tr>\\n\\t\\t<tr>\\n\\t\\t\\t<td style=\\\"text-align:center;\\\">\\n\\t\\t\\t\\t<span style=\\\"color:#212529;\\\">手</span><span style=\\\"color:#212529;\\\">續費</span><br />\\n\\t\\t\\t</td>\\n\\t\\t\\t<td style=\\\"text-align:center;\\\">\\n\\t\\t\\t\\t5.46%<br />\\n\\t\\t\\t</td>\\n\\t\\t\\t<td style=\\\"text-align:center;\\\">\\n\\t\\t\\t\\t8.20%<br />\\n\\t\\t\\t</td>\\n\\t\\t\\t<td style=\\\"text-align:center;\\\">\\n\\t\\t\\t\\t10.92%<br />\\n\\t\\t\\t</td>\\n\\t\\t\\t<td>\\n\\t\\t\\t\\t<br />\\n\\t\\t\\t</td>\\n\\t\\t</tr>\\n\\t</tbody>\\n</table>\\n<br />\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/product",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"product"
+									]
+								},
+								"description": "**建立商品**\n\n**HTTP Method**:  \nPOST {{host}}/admin/api/product\n\n**權限**：{{token}}\n\n**參數**：None\n\n**Body Params**：JSON\n\n| 回傳名稱 | 回傳型別 | 說明 | 必填 |\n| --- | --- | --- | --- |\n| name | string | 商品名稱 | true |\n| regionId | int | 商品分區 id | true |\n| brandId | int | 商品品牌 id | true |\n| description | string | 說明 | false |\n| specifications | array | 商品規格  <br>ex: \\['黑', '白'\\]  <br>沒有規格空陣列\\[\\] | true |\n| installmentTypeId | int | 商品分期型 id | true |\n| price | int | 總價格 | true |\n| mediaIds | object | 直接貼  <br>上傳商品圖片的回傳 | false |\n| webContent | string | 商品內容(網頁版本) | false |\n| mobileContent | string | 商品內容(手機版本) | false |\n\n**Response**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| code | integer | 回傳代碼 |\n| data | object | 回傳的資料 |\n| time | integer | 伺服器回應的時間 |\n\n**Data**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| message | string | 商品建立成功 |\n\n**錯誤**：資料驗證相關"
+							},
+							"response": []
+						},
+						{
+							"name": "上傳商品圖片",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "main",
+											"type": "file",
+											"src": "/Users/huang_chun/Desktop/ezpay/11871543_R.webp"
+										},
+										{
+											"key": "additional[0]",
+											"type": "file",
+											"src": "/Users/huang_chun/Desktop/ezpay/11871543_01_001_R.webp"
+										},
+										{
+											"key": "additional[1]",
+											"type": "file",
+											"src": "/Users/huang_chun/Desktop/ezpay/11871543_01_002_R.webp"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/uploadMedia/product",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"uploadMedia",
+										"product"
+									],
+									"query": [
+										{
+											"key": "image",
+											"value": "",
+											"disabled": true
+										}
+									]
+								},
+								"description": "**上傳商品圖片**\n\n**HTTP Method**:  \nPOST {{host}}/admin/api/uploadMedia/product\n\n**權限**：{{token}}\n\n**參數**：None\n\n**Body Params**：form-data\n\n沒有必填限制 有要上傳再給\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| main | value | 主要商品圖片 |\n| additional\\[0\\] | value | 次要商品圖片 1 |\n| additional\\[1\\] | value | 次要商品圖片  <br>2 |\n\n**Response**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| mediaIds | object | 商品圖片id |\n\nmediaIds:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| main | array | 主要商品圖片 id |\n| additional | array | 次要商品圖片 |\n\n**錯誤**：資料驗證相關"
+							},
+							"response": []
+						},
+						{
+							"name": "修改商品",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"mediaIds\": {\n        \"main\": [\n            80\n        ],\n        \"additional\": [\n            81,\n            82\n        ]\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/product/87",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"product",
+										"87"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "刪除商品",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/product/5",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"product",
+										"5"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Region 商品分區",
+					"item": [
+						{
+							"name": "取得商品分區選項",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/region/options",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"region",
+										"options"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "取得商品分區列表",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/region?page=2&prePage=5&sortBy=id&orderBy=asc",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"region"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "2"
+										},
+										{
+											"key": "prePage",
+											"value": "5"
+										},
+										{
+											"key": "sortBy",
+											"value": "id"
+										},
+										{
+											"key": "orderBy",
+											"value": "asc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "取得商品分區明細",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/region/3",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"region",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "建立商品分區",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"測試\",\n    \"icon\": \"test\",\n    \"brands\": [\n        1,\n        2,\n        3\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/region",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"region"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "修改商品分區",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"icon\": \"mdi-tablet\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/region/2",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"region",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "刪除商品分區",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/region/7",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"region",
+										"7"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Brand 商品品牌",
+					"item": [
+						{
+							"name": "取得商品品牌選項",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/brand/options",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"brand",
+										"options"
+									],
+									"query": [
+										{
+											"key": "regionId",
+											"value": "3",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "取得商品品牌列表",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/brand?page=1&prePage=10&sortBy=id&orderBy=asc",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"brand"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "prePage",
+											"value": "10"
+										},
+										{
+											"key": "sortBy",
+											"value": "id"
+										},
+										{
+											"key": "orderBy",
+											"value": "asc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "取得商品品牌明細",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/brand/17",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"brand",
+										"17"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "建立商品品牌",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"DIOR\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/brand",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"brand"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "修改商品品牌",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"DIOR\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/brand/17",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"brand",
+										"17"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "刪除商品品牌",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/brand/17",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"brand",
+										"17"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Order 訂單",
+					"item": [
+						{
+							"name": "取得訂單列表",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/order?page=1&prePage=5&sortBy=id&orderBy=asc",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"order"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "審核未通過",
+											"disabled": true
+										},
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "prePage",
+											"value": "5"
+										},
+										{
+											"key": "sortBy",
+											"value": "id"
+										},
+										{
+											"key": "orderBy",
+											"value": "asc"
+										}
+									]
+								},
+								"description": "取得訂單列表\n\n**HTTP Method**:  \nPOST {{host}}/admin/api/product\n\n**權限**：{{token}}\n\n**參數**：\n\n| 參數名稱 | 參數型別 | 說明 | 必填 |\n| --- | --- | --- | --- |\n| status | string | 狀態 | false |\n| page | integer | 頁數 | false |\n| prePage | integer | 每頁資料筆數 | false |\n| sortBy | string | 排序欄位 | false |\n| orderBy | string | 正/倒 序 | false |\n\n**Body Params**：none\n\n**Response**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| code | integer | 回傳代碼 |\n| data | object | 回傳的資料 |\n| time | integer | 伺服器回應的時間 |\n\n**Data**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| id | int | 訂單id |\n| status | string | 訂單狀態 |\n| reviewer | string | 訂單審核者 |\n| createdAt | string | 訂單建立時間 |\n| product | object | 訂單商品 |\n| invoice | array | 發票資訊 |\n\ndata.product:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| id | int | 商品id |\n| name | string | 商品名稱 |\n| mainImage | array | 商品主圖 |\n| description | string | 商品說明 |\n| price | int | 分期價格(每期) |\n| totalPrice | int | 總價 |\n| specification | string | 選擇規格 |\n| installment | int | 分期 |"
+							},
+							"response": []
+						},
+						{
+							"name": "取得訂單明細",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/order/1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"order",
+										"1"
+									]
+								},
+								"description": "取得訂單明細\n\n**HTTP Method**:  \nPOST {{host}}/admin/api/order/{orderID}\n\n**權限**：{{token}}\n\n**參數**：None\n\n**Body Params**：None\n\n**Response**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| code | integer | 回傳代碼 |\n| data | object | 回傳的資料 |\n| time | integer | 伺服器回應的時間 |\n\n**Data**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| id | int | 訂單id |\n| status | string | 訂單狀態 |\n| idNumber | string | 申請人身分證字號 |\n| reviewer | string | 訂單審核者 |\n| createdAt | string | 訂單建立時間 |\n| product | object | 訂單商品 |\n| invoice | array | 發票資訊 |\n| applicant | object | 申請人資訊 |\n| consignee | object | 收貨人資訊 |\n| auditRecord | array | 審核紀錄 |\n| frontOfIdCard | array | 申請人身分證正面圖片 |\n| backOfIdCard | array | 申請人身分證背面圖片 |\n| frontOfIdentity | array | 申請人其他證件正面圖片 |\n| backOfIdentity | array | 申請人其他證件1背面圖片 |\n| promissoryNote | array | 本票圖片 |\n| agreement | array | 約定事項圖片 |\n| installments | array | 分期單資訊 |\n\ndata.product:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| id | int | 商品id |\n| name | string | 商品名稱 |\n| mainImage | array | 商品主圖 |\n| description | string | 商品說明 |\n| price | int | 分期價格(每期) |\n| totalPrice | int | 總價 |\n| specification | string | 選擇規格 |\n| installment | int | 分期 |\n\ndata.invoice:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| 暫無 |  |  |\n\ndata.applicant:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| identityType | string | 身份別 |\n| idIssuedDate | string | 身份證發證日期 |\n| idIssuedLocation | string | 身份證發證地點 |\n| idIssuedType | string | 身份證發證類別 |\n| birthDate | string | 出生年月日 |\n| contactEmail | string | 常用聯絡Email |\n| telecomOperator | string | 電信商 |\n| mobile | string | 手機號碼 |\n| residenceCityRegion | string | 戶籍城市 |\n| residencePostalCode | string | 戶籍郵遞區號 |\n| residenceAddress | string | 戶籍地址 |\n| residenceLandline | string | 戶籍市話 |\n| currentCityRegion | string | 現住城市 |\n| currentPostalCode | string | 現住郵遞區號 |\n| currentAddress | string | 現住地址 |\n| currentLandline | string | 現住市話 |\n| housingOwnership | string | 住房所有權 |\n| employmentStatus | boolean | 工作狀態 |\n| companyName | string | 公司名稱 |\n| seniority | string | 年資 |\n| hasCreditCard | boolean | 是否有信用卡 |\n| salary | string | 月薪 |\n| companyPhone | string | 公司電話 |\n| companyPhoneExtension | string | 公司電話分機 |\n| consultationTime | string | 可照會時間 |\n| precautions | string | 須注意事項 |\n| isConfidential | boolean | 須保密 |\n| contact1Name | string | 聯絡人1 姓名 |\n| contact1Relationship | string | 聯絡人1 關係 |\n| contact1Mobile | string | 聯絡人 1 電話 |\n| contact2Name | string | 聯絡人2 姓名 |\n| contact2Relationship | string | 聯絡人2 姓名 |\n| contact2Mobile | string | 聯絡人 2 電話 |\n\ndata.consignee:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| consigneeName | string | 收貨人姓名 |\n| consigneeCityRegion | string | 收貨人城市 |\n| consigneePostalCode | string | 收貨人郵遞區號 |\n| consigneeAddress | string | 收貨人地址 |\n| consigneeLandline | string | 收貨人市話 |\n| consigneeMobile | string | 收貨人手機號碼 |\n| consigneeNotes | string | 收貨備註 |\n| consigneeNeedsTaxId | boolean | 是否需要統一編號 |\n| consigneeTaxId | string | 統一編號 |\n| consigneeCompanyTitle | string | 公司抬頭 |\n\ndata.auditRecord:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| reason | string | 原因 |\n| rejectTime | string | 駁回時間 |"
+							},
+							"response": []
+						},
+						{
+							"name": "取得加密圖片",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/files/eyJpdiI6IlZOQW0wWTJGcmtxTGVnenFIUDVqNnc9PSIsInZhbHVlIjoiM0VmNDY5d0dONEh0UlZKN2hXbnRCWEhiREhhUWhGajVhZ3NmMllha09KQ3c1R1poN1lmNUpGT2tVTEVJRkxoMEZZZlZBVUhNOExKOUJIOUo3MHh1RHhYTFdLRTFFQ0ZoM0tkNUVRUEpjRU09IiwibWFjIjoiNWRkODBjYWJjZmMwZjFlZTQxOTEzOTRiMDgxZWQyNmE4MTFkNDU2Y2ZlYjIzZTJkZTU2YzIxYmY1YzE1ODY3NCIsInRhZyI6IiJ9",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"files",
+										"eyJpdiI6IlZOQW0wWTJGcmtxTGVnenFIUDVqNnc9PSIsInZhbHVlIjoiM0VmNDY5d0dONEh0UlZKN2hXbnRCWEhiREhhUWhGajVhZ3NmMllha09KQ3c1R1poN1lmNUpGT2tVTEVJRkxoMEZZZlZBVUhNOExKOUJIOUo3MHh1RHhYTFdLRTFFQ0ZoM0tkNUVRUEpjRU09IiwibWFjIjoiNWRkODBjYWJjZmMwZjFlZTQxOTEzOTRiMDgxZWQyNmE4MTFkNDU2Y2ZlYjIzZTJkZTU2YzIxYmY1YzE1ODY3NCIsInRhZyI6IiJ9"
+									]
+								},
+								"description": "取得訂單明細\n\n**HTTP Method**:  \nPOST {{host}}/admin/api/order/{orderID}\n\n**權限**：{{token}}\n\n**參數**：None\n\n**Body Params**：None\n\n**Response**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| code | integer | 回傳代碼 |\n| data | object | 回傳的資料 |\n| time | integer | 伺服器回應的時間 |\n\n**Data**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| id | int | 訂單id |\n| status | string | 訂單狀態 |\n| idNumber | string | 申請人身分證字號 |\n| reviewer | string | 訂單審核者 |\n| createdAt | string | 訂單建立時間 |\n| product | object | 訂單商品 |\n| invoice | array | 發票資訊 |\n| applicant | object | 申請人資訊 |\n| consignee | object | 收貨人資訊 |\n| auditRecord | array | 審核紀錄 |\n| frontOfIdCard | array | 申請人身分證正面圖片 |\n| backOfIdCard | array | 申請人身分證背面圖片 |\n| frontOfIdentity | array | 申請人其他證件正面圖片 |\n| backOfIdentity | array | 申請人其他證件1背面圖片 |\n| promissoryNote | array | 本票圖片 |\n| agreement | array | 約定事項圖片 |\n| installments | array | 分期單資訊 |\n\ndata.product:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| id | int | 商品id |\n| name | string | 商品名稱 |\n| mainImage | array | 商品主圖 |\n| description | string | 商品說明 |\n| price | int | 分期價格(每期) |\n| totalPrice | int | 總價 |\n| specification | string | 選擇規格 |\n| installment | int | 分期 |\n\ndata.invoice:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| 暫無 |  |  |\n\ndata.applicant:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| identityType | string | 身份別 |\n| idIssuedDate | string | 身份證發證日期 |\n| idIssuedLocation | string | 身份證發證地點 |\n| idIssuedType | string | 身份證發證類別 |\n| birthDate | string | 出生年月日 |\n| contactEmail | string | 常用聯絡Email |\n| telecomOperator | string | 電信商 |\n| mobile | string | 手機號碼 |\n| residenceCityRegion | string | 戶籍城市 |\n| residencePostalCode | string | 戶籍郵遞區號 |\n| residenceAddress | string | 戶籍地址 |\n| residenceLandline | string | 戶籍市話 |\n| currentCityRegion | string | 現住城市 |\n| currentPostalCode | string | 現住郵遞區號 |\n| currentAddress | string | 現住地址 |\n| currentLandline | string | 現住市話 |\n| housingOwnership | string | 住房所有權 |\n| employmentStatus | boolean | 工作狀態 |\n| companyName | string | 公司名稱 |\n| seniority | string | 年資 |\n| hasCreditCard | boolean | 是否有信用卡 |\n| salary | string | 月薪 |\n| companyPhone | string | 公司電話 |\n| companyPhoneExtension | string | 公司電話分機 |\n| consultationTime | string | 可照會時間 |\n| precautions | string | 須注意事項 |\n| isConfidential | boolean | 須保密 |\n| contact1Name | string | 聯絡人1 姓名 |\n| contact1Relationship | string | 聯絡人1 關係 |\n| contact1Mobile | string | 聯絡人 1 電話 |\n| contact2Name | string | 聯絡人2 姓名 |\n| contact2Relationship | string | 聯絡人2 姓名 |\n| contact2Mobile | string | 聯絡人 2 電話 |\n\ndata.consignee:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| consigneeName | string | 收貨人姓名 |\n| consigneeCityRegion | string | 收貨人城市 |\n| consigneePostalCode | string | 收貨人郵遞區號 |\n| consigneeAddress | string | 收貨人地址 |\n| consigneeLandline | string | 收貨人市話 |\n| consigneeMobile | string | 收貨人手機號碼 |\n| consigneeNotes | string | 收貨備註 |\n| consigneeNeedsTaxId | boolean | 是否需要統一編號 |\n| consigneeTaxId | string | 統一編號 |\n| consigneeCompanyTitle | string | 公司抬頭 |\n\ndata.auditRecord:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| reason | string | 原因 |\n| rejectTime | string | 駁回時間 |"
+							},
+							"response": []
+						},
+						{
+							"name": "取得訂單選項組",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/order/options",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"order",
+										"options"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "修改訂單",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"idIssuedDate\": \"1990-10-12\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/order/2",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"order",
+										"2"
+									]
+								},
+								"description": "## {{ host }} /admin/api/order\n\n規格 沒有就給 null"
+							},
+							"response": []
+						},
+						{
+							"name": "審核訂單",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"status\": \"待補件\",\n    \"reason\": \"身分證反光，請重新上傳身分證\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/order/verify/1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"order",
+										"verify",
+										"1"
+									]
+								},
+								"description": "## {{ host }} /admin/api/order/verify/{{ orderId }}\n\n#### orderId 為 訂單id\n\n> ***權限：***\n\n`order.verify`\n\n> **params: (json)**\n\n##### 審核不通過：\n\n``` json\n{\n  \"verify\": false,\n  \"reason\": \"請確認提供的公司電話, 因為電話打不通, 無法進行驗證。\"\n}\n\n```\n\n##### 審核通過：\n\n``` json\n{\n  \"verify\": true\n}\n\n```\n\n參數說明：\n\n| **參數名稱** | **參數型別** | **說明** | **必填*** |\n| --- | --- | --- | --- |\n| verify | boolean | 審核結果 | true |\n| reason | string | 原因 | false |"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Role",
+					"item": [
+						{
+							"name": "取得選項組",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/role/options",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"role",
+										"options"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "建立角色",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"測試\",\n    \"permissions\": [20,21]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/role",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"role"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "修改角色",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"全檢視\",\n    \"permissions\": [2,3,8,9]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/role/3",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"role",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "取得角色列表",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/role?page=1&prePage=5&sortBy=id&orderBy=asc",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"role"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "prePage",
+											"value": "5"
+										},
+										{
+											"key": "sortBy",
+											"value": "id"
+										},
+										{
+											"key": "orderBy",
+											"value": "asc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "取得角色資訊",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/role/1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"role",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "刪除角色",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/role/5",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"role",
+										"5"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Setting 後端設定",
+					"item": [
+						{
+							"name": "Rule 規則設定",
+							"item": [
+								{
+									"name": "建立規則",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"order_viewer\",\n    \"methodId\": 1,\n    \"permissions\": [29,30]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/admin/api/setting/rule",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"admin",
+												"api",
+												"setting",
+												"rule"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "取得規則列表",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/admin/api/setting/rule",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"admin",
+												"api",
+												"setting",
+												"rule"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "取得規則資訊",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/admin/api/setting/rule/1",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"admin",
+												"api",
+												"setting",
+												"rule",
+												"1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "修改規則",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"test_manager1\",\n    \"methodId\": 1,\n    \"permissions\": [1,2,3,4,5]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/admin/api/setting/rule/10",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"admin",
+												"api",
+												"setting",
+												"rule",
+												"10"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "刪除規則",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/admin/api/setting/rule/3",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"admin",
+												"api",
+												"setting",
+												"rule",
+												"3"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "MenuPermissions 選單權限",
+							"item": [
+								{
+									"name": "取得選單權限列表",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/admin/api/setting/menuPermissions",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"admin",
+												"api",
+												"setting",
+												"menuPermissions"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "修改選單權限",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"permissions\": [42]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/admin/api/setting/menuPermissions/14",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"admin",
+												"api",
+												"setting",
+												"menuPermissions",
+												"14"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "MenuRules 選單規則",
+							"item": [
+								{
+									"name": "取得選單規則列表",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/admin/api/setting/menuRule",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"admin",
+												"api",
+												"setting",
+												"menuRule"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "修改選單規則",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"rules\": [1,2,4]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/admin/api/setting/menuRule/1",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"admin",
+												"api",
+												"setting",
+												"menuRule",
+												"1"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "取得規則選項組",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/setting/method/options",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"setting",
+										"method",
+										"options"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "取得權限選項組",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/setting/permission/options",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"setting",
+										"permission",
+										"options"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Menu",
+					"item": [
+						{
+							"name": "取得選單列表",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/menu",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"menu"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "建立選單",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"sortOrder\": 5,\n    \"name\": \"測試選單\",\n    \"code\": \"test\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/menu",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"menu"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "修改選單",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"sortOrder\": 5,\n    \"name\": \"測試選單1\",\n    \"code\": \"test1\",\n    \"parentId\": 6\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/menu/6",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"menu",
+										"6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "刪除選單",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/menu/3",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"menu",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "取得選單選項組",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/menu/options",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"menu",
+										"options"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Self",
+					"item": [
+						{
+							"name": "profile",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"account\": \"test1\",\n    \"password\": \"123456\",\n    \"captcha\": \"6997\",\n    \"cache_key\": \"{{cache_key}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/self/profile",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"self",
+										"profile"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Menu清單",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"account\": \"test1\",\n    \"password\": \"123456\",\n    \"captcha\": \"6997\",\n    \"cache_key\": \"{{cache_key}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/self/menuList",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"self",
+										"menuList"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Admin",
+					"item": [
+						{
+							"name": "取得管理者名單",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"account\": \"test1\",\n    \"password\": \"123456\",\n    \"captcha\": \"6997\",\n    \"cache_key\": \"{{cache_key}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/admin?page=1&prePage=5&sortBy=id&orderBy=asc",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"admin"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "prePage",
+											"value": "5"
+										},
+										{
+											"key": "sortBy",
+											"value": "id"
+										},
+										{
+											"key": "orderBy",
+											"value": "asc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "取得管理者資訊",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/admin/5",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"admin",
+										"5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "建立管理者",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"account\": \"test\",\n    \"email\": \"test@example.com\",\n    \"name\": \"test\",\n    \"password\": \"123456\",\n    \"roles\": [3]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/admin",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"admin"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "修改管理者",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"account\": \"test1\",\n    \"email\": \"test1@example.com\",\n    \"name\": \"test1\",\n    \"password\": \"123456\",\n    \"roles\": [3,4]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/admin/4",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"admin",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "刪除管理者",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/admin/2",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"admin",
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "登出",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const result = JSON.parse(responseBody);",
+											"if (result.code == 1) {",
+											"    pm.environment.unset(\"token\");",
+											"}"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"account\": \"test1\",\n    \"password\": \"123456\",\n    \"captcha\": \"6997\",\n    \"cache_key\": \"{{cache_key}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/logout",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"logout"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "刷新",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const result = JSON.parse(responseBody);",
+											"if (result.code == 1) {",
+											"    pm.environment.unset(\"token\");",
+											"    pm.environment.set(\"token\", result.data.token);",
+											"}",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"account\": \"test1\",\n    \"password\": \"123456\",\n    \"captcha\": \"6997\",\n    \"cache_key\": \"{{cache_key}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/refresh",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"refresh"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Carousel 輪播",
+					"item": [
+						{
+							"name": "建立輪播選項",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"productId\": 1,\n    \"mediaIds\": {\n        \"carouselImage\": [\n            1\n        ]\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/carousel",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"carousel"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "修改輪播選項",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"productId\": 1,\n    \"order\": 3,\n    \"mediaIds\": {\n        \"carouselImage\": [\n            37\n        ]\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/carousel/2",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"carousel",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "取得輪播列表",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/carousel",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"carousel"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "取得輪播細項",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/carousel/3",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"carousel",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "刪除輪播項目",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/carousel/1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"carousel",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "上傳輪播圖片",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "carouselImage",
+											"type": "file",
+											"src": "/Users/huang_chun/Desktop/ezpay/20210223102026-62a0f41c-a224-430e-8a5e-a429548811a6.jpeg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/uploadMedia/carousel",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"uploadMedia",
+										"carousel"
+									],
+									"query": [
+										{
+											"key": "carouselImage",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "FAQCategory 常見問題類型",
+					"item": [
+						{
+							"name": "取得選項組",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/faqCategory/options",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"faqCategory",
+										"options"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "取得常見問題類型列表",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/faqCategory",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"faqCategory"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "prePage",
+											"value": "5",
+											"disabled": true
+										},
+										{
+											"key": "sortBy",
+											"value": "id",
+											"disabled": true
+										},
+										{
+											"key": "orderBy",
+											"value": "asc",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "建立常見問題類型",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"進度與繳款相關\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/faqCategory",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"faqCategory"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "修改常見問題類型",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"會員相關\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/faqCategory/3",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"faqCategory",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "刪除常見問題類型",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/faqCategory/7",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"faqCategory",
+										"7"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "FAQs 常見問題",
+					"item": [
+						{
+							"name": "取得常見問題類型列表",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/faqs?categoryId=1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"faqs"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "prePage",
+											"value": "5",
+											"disabled": true
+										},
+										{
+											"key": "sortBy",
+											"value": "id",
+											"disabled": true
+										},
+										{
+											"key": "orderBy",
+											"value": "asc",
+											"disabled": true
+										},
+										{
+											"key": "categoryId",
+											"value": "1"
+										},
+										{
+											"key": "visible",
+											"value": "true",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "取得常見問題類型詳細資訊",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/faqs/2",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"faqs",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "建立常見問題類型",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"categoryId\": 2,\n    \"question\": \"我不希望親友知道可以嗎？\",\n    \"answer\": \"\",\n    \"visible\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/faqs",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"faqs"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "修改常見問題類型",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"categoryId\": 1,\n    \"question\": \"購物收到商品後，如何繳款？\",\n    \"answer\":\"<p>現開放 【ATM】 、【超商繳款】兩種繳款方式，請依下方教學步驟完成繳款。</p><p>第一期的繳款時間為商品寄出或交付起12天為第一期繳款日，收到商品後約 2 - 7天即可上官網或APP查詢【實際繳款時間】並開始繳款。</p><p><br />【繳款流程及說明】<br /><br />Stp.1 選擇欲繳款訂單</p><p>1.請登入會員，點選「我要繳款」<br />2.請選擇欲繳款對應訂單編號<br />3.點選訂單內容中繳費欄位的「開啟」</p><p><img alt='' src='https://www.apple.com/tw/airpods/images/overview/tile_onetap_setup__fzj1m8dhjoq6_large_2x.jpg' /></p><p>Stp.2 自訂繳款說明</p><p>1.請依照分期帳單待繳款項目「選取您的繳款的項目」，請於繳款時留意繳款期限以免繳款逾期。<br />a.逾期款項設為必選選項<br />b.未到期繳款項目可依照期數依序選取進行提前繳款<br />2.選取完成後，系統將自動計算本次繳款金額給您，確認金額「點選產生繳款單」，繳款單產生後繳款期限為當日有效，逾期請重新產生繳款單。</p><p>&nbsp;</p><p><img alt='' src='https://www.apple.com/tw/iphone-13/specs/' /><img alt='' src='https://www.apple.com/tw/iphone-14-pro/' /><img alt='' src='https://www.apple.com/tw/airpods/images/overview/tile_spatial_audio__c9aidaa6ntkm_large_2x.jpg' /></p><p>&nbsp;</p><p>Stp.3 繳款方式</p><p>繳款單內容共有下列2種繳款方式：</p><p>【超商繳款】</p><p>1.請出示畫面中的繳款條碼予超商店員，確認應繳金額即可進行繳款。<br />2.如繳款金額超過NT$20,000，將產生第二筆條碼，請於出示條示務必進行確認，避免未完成繳款狀況。<br />3.超商繳款須額外負擔手續費，且入帳須 3 ~ 5 個工作天，若您已準時繳款，請無須理會催繳訊息。</p><p><img alt='' src='https://www.apple.com/tw/airpods/images/overview/tile_audio_sharing__ord9ku1kssq6_large_2x.jpg' /></p><p>【ATM繳款】</p><p>1.點選「ATM繳款」，取得轉帳虛擬銀行帳號</p><p>2.至ATM或網路銀行依照轉帳金額轉入指定虛擬銀行帳號</p><p>3.繳款時請留意轉帳金額，ATM繳款需收取帳務處理費NT$20</p><p>&nbsp;</p><p><img alt='' src='https://www.apple.com/tw/airpods/images/overview/tile_automatic_switching__etjisgj91gk2_large_2x.jpg' /></p><p>※ 請妥善保存繳款收據，建議以掃描或拍照留存<br />※ 請準時繳款以維護自身信用，超過繳款期限將依「分期付款約定書」之約定條款，導致遲繳違約金及滯納金產生。</p>\",\n    \"visible\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/faqs/2",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"faqs",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "刪除常見問題類型",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/faqCategory/7",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"faqCategory",
+										"7"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Test 測試",
+					"item": [
+						{
+							"name": "ping 測試",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/admin/api/test/ping",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"test",
+										"ping"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Redis 測試",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/admin/api/test/redis",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"test",
+										"redis"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Meilisearch 測試",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/admin/api/test/meilisearch",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"test",
+										"meilisearch"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "訂單建立email  測試",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/admin/api/test/email/placed",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"test",
+										"email",
+										"placed"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "訂單補件email  測試",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/admin/api/test/email/supplement",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"test",
+										"email",
+										"supplement"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "訂單編輯email  測試",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/admin/api/test/email/edit",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"test",
+										"email",
+										"edit"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Pusher 測試",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"channel\": \"private-customer-user-2\",\n    \"type\": \"new notification\",\n    \"data\": {\n        \"event\": \"test\",\n        \"message\": \"test\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/test/pusher",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"test",
+										"pusher"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Pusher 管理者私人頻道測試 Copy",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-CSRF-Token",
+										"value": "oThvjCX4r34nw7NZKG9PfHO7kF2TTQO2uSJtBV6K",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/broadcasting/auth?socket_id=6899.4453110&channel_name=private-admin-user-1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"broadcasting",
+										"auth"
+									],
+									"query": [
+										{
+											"key": "socket_id",
+											"value": "6899.4453110"
+										},
+										{
+											"key": "channel_name",
+											"value": "private-admin-user-1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Telegram 通知測試",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/admin/api/test/telegram",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"test",
+										"telegram"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Dashboard 主控版",
+					"item": [
+						{
+							"name": "取得客戶月成長",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/dashboard/monthlyCustomerGrowth",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"dashboard",
+										"monthlyCustomerGrowth"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "審核未通過",
+											"disabled": true
+										},
+										{
+											"key": "page",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "prePage",
+											"value": "5",
+											"disabled": true
+										},
+										{
+											"key": "sortBy",
+											"value": "id",
+											"disabled": true
+										},
+										{
+											"key": "orderBy",
+											"value": "asc",
+											"disabled": true
+										}
+									]
+								},
+								"description": "取得訂單列表\n\n**HTTP Method**:  \nPOST {{host}}/admin/api/product\n\n**權限**：{{token}}\n\n**參數**：\n\n| 參數名稱 | 參數型別 | 說明 | 必填 |\n| --- | --- | --- | --- |\n| status | string | 狀態 | false |\n| page | integer | 頁數 | false |\n| prePage | integer | 每頁資料筆數 | false |\n| sortBy | string | 排序欄位 | false |\n| orderBy | string | 正/倒 序 | false |\n\n**Body Params**：none\n\n**Response**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| code | integer | 回傳代碼 |\n| data | object | 回傳的資料 |\n| time | integer | 伺服器回應的時間 |\n\n**Data**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| id | int | 訂單id |\n| status | string | 訂單狀態 |\n| reviewer | string | 訂單審核者 |\n| createdAt | string | 訂單建立時間 |\n| product | object | 訂單商品 |\n| invoice | array | 發票資訊 |\n\ndata.product:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| id | int | 商品id |\n| name | string | 商品名稱 |\n| mainImage | array | 商品主圖 |\n| description | string | 商品說明 |\n| price | int | 分期價格(每期) |\n| totalPrice | int | 總價 |\n| specification | string | 選擇規格 |\n| installment | int | 分期 |"
+							},
+							"response": []
+						},
+						{
+							"name": "取得訂單月成長",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/dashboard/monthlyOrderGrowth",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"dashboard",
+										"monthlyOrderGrowth"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "審核未通過",
+											"disabled": true
+										},
+										{
+											"key": "page",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "prePage",
+											"value": "5",
+											"disabled": true
+										},
+										{
+											"key": "sortBy",
+											"value": "id",
+											"disabled": true
+										},
+										{
+											"key": "orderBy",
+											"value": "asc",
+											"disabled": true
+										}
+									]
+								},
+								"description": "取得訂單列表\n\n**HTTP Method**:  \nPOST {{host}}/admin/api/product\n\n**權限**：{{token}}\n\n**參數**：\n\n| 參數名稱 | 參數型別 | 說明 | 必填 |\n| --- | --- | --- | --- |\n| status | string | 狀態 | false |\n| page | integer | 頁數 | false |\n| prePage | integer | 每頁資料筆數 | false |\n| sortBy | string | 排序欄位 | false |\n| orderBy | string | 正/倒 序 | false |\n\n**Body Params**：none\n\n**Response**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| code | integer | 回傳代碼 |\n| data | object | 回傳的資料 |\n| time | integer | 伺服器回應的時間 |\n\n**Data**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| id | int | 訂單id |\n| status | string | 訂單狀態 |\n| reviewer | string | 訂單審核者 |\n| createdAt | string | 訂單建立時間 |\n| product | object | 訂單商品 |\n| invoice | array | 發票資訊 |\n\ndata.product:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| id | int | 商品id |\n| name | string | 商品名稱 |\n| mainImage | array | 商品主圖 |\n| description | string | 商品說明 |\n| price | int | 分期價格(每期) |\n| totalPrice | int | 總價 |\n| specification | string | 選擇規格 |\n| installment | int | 分期 |"
+							},
+							"response": []
+						},
+						{
+							"name": "取得月繳款金額",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/dashboard/repaymentInfo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"dashboard",
+										"repaymentInfo"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "審核未通過",
+											"disabled": true
+										},
+										{
+											"key": "page",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "prePage",
+											"value": "5",
+											"disabled": true
+										},
+										{
+											"key": "sortBy",
+											"value": "id",
+											"disabled": true
+										},
+										{
+											"key": "orderBy",
+											"value": "asc",
+											"disabled": true
+										}
+									]
+								},
+								"description": "取得訂單列表\n\n**HTTP Method**:  \nPOST {{host}}/admin/api/product\n\n**權限**：{{token}}\n\n**參數**：\n\n| 參數名稱 | 參數型別 | 說明 | 必填 |\n| --- | --- | --- | --- |\n| status | string | 狀態 | false |\n| page | integer | 頁數 | false |\n| prePage | integer | 每頁資料筆數 | false |\n| sortBy | string | 排序欄位 | false |\n| orderBy | string | 正/倒 序 | false |\n\n**Body Params**：none\n\n**Response**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| code | integer | 回傳代碼 |\n| data | object | 回傳的資料 |\n| time | integer | 伺服器回應的時間 |\n\n**Data**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| id | int | 訂單id |\n| status | string | 訂單狀態 |\n| reviewer | string | 訂單審核者 |\n| createdAt | string | 訂單建立時間 |\n| product | object | 訂單商品 |\n| invoice | array | 發票資訊 |\n\ndata.product:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| id | int | 商品id |\n| name | string | 商品名稱 |\n| mainImage | array | 商品主圖 |\n| description | string | 商品說明 |\n| price | int | 分期價格(每期) |\n| totalPrice | int | 總價 |\n| specification | string | 選擇規格 |\n| installment | int | 分期 |"
+							},
+							"response": []
+						},
+						{
+							"name": "取得月繳款行事曆",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/admin/api/dashboard/monthCalendar?startDate=2024-01-28&endDate=2024-03-09",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"api",
+										"dashboard",
+										"monthCalendar"
+									],
+									"query": [
+										{
+											"key": "startDate",
+											"value": "2024-01-28"
+										},
+										{
+											"key": "endDate",
+											"value": "2024-03-09"
+										}
+									]
+								},
+								"description": "取得訂單列表\n\n**HTTP Method**:  \nPOST {{host}}/admin/api/product\n\n**權限**：{{token}}\n\n**參數**：\n\n| 參數名稱 | 參數型別 | 說明 | 必填 |\n| --- | --- | --- | --- |\n| status | string | 狀態 | false |\n| page | integer | 頁數 | false |\n| prePage | integer | 每頁資料筆數 | false |\n| sortBy | string | 排序欄位 | false |\n| orderBy | string | 正/倒 序 | false |\n\n**Body Params**：none\n\n**Response**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| code | integer | 回傳代碼 |\n| data | object | 回傳的資料 |\n| time | integer | 伺服器回應的時間 |\n\n**Data**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| id | int | 訂單id |\n| status | string | 訂單狀態 |\n| reviewer | string | 訂單審核者 |\n| createdAt | string | 訂單建立時間 |\n| product | object | 訂單商品 |\n| invoice | array | 發票資訊 |\n\ndata.product:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| id | int | 商品id |\n| name | string | 商品名稱 |\n| mainImage | array | 商品主圖 |\n| description | string | 商品說明 |\n| price | int | 分期價格(每期) |\n| totalPrice | int | 總價 |\n| specification | string | 選擇規格 |\n| installment | int | 分期 |"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "取得驗證碼",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const result = JSON.parse(responseBody);",
+									"pm.environment.set(\"cache_key\", result.data.cache_key);",
+									"",
+									"const template = `<img width=\"200\" height=\"100\" src=\"${result.data.captcha_img}\"/>`;",
+									"pm.visualizer.set(template);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/admin/api/captcha",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"admin",
+								"api",
+								"captcha"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "登入",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.unset(\"token\");",
+									"const result = JSON.parse(responseBody);",
+									"pm.environment.set(\"token\", result.data.token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"account\": \"admin\",\n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/admin/api/login",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"admin",
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "登出",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.unset(\"token\");",
+									"const result = JSON.parse(responseBody);",
+									"pm.environment.set(\"token\", result.data.token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"account\": \"admin\",\n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/admin/api/logout",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"admin",
+								"api",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "後臺管理"
+		},
+		{
+			"name": "客戶使用者",
+			"item": [
+				{
+					"name": "Self",
+					"item": [
+						{
+							"name": "取得個人資料",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{customer_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/self/profile",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"self",
+										"profile"
+									]
+								},
+								"description": "**獲取個人資料**\n\n**HTTP Method**:  \nGET {{host}}/api/self/profile\n\n**權限**：None\n\n**參數**：None\n\n**Body Params**：None\n\n**Response**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| code | integer | 回傳代碼 |\n| message | string | 錯誤時訊息提示 |\n| data | object | 回傳的資料 |\n| time | integer | 伺服器回應的時間 |\n\n**Data**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| id | integer | 會員編號 |\n| idNumber | string | 身分證字號 |\n| name | string | 姓名 |\n| gender | string | 性別 |\n| birthday | string | 生日 |\n| identity | string | 身份別 |\n| phone | string | 手機號碼 |\n| email | string | 電子郵件帳號 |\n| lineId | string | Line ID |\n| fbId | string/null | FB ID |\n| residencePhone | string | 戶籍電話 |\n| currentPhone | string | 現住電話 |\n| residenceAddress | string | 戶籍地址 |\n| currentAddress | string | 現住地址 |\n\n**錯誤**：Unauthenticated. 未/錯誤 授權"
+							},
+							"response": []
+						},
+						{
+							"name": "取得個人訂單資料",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{customer_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/self/orders?page=1&prePage=10&sortBy=id&orderBy=asc",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"self",
+										"orders"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "prePage",
+											"value": "10"
+										},
+										{
+											"key": "sortBy",
+											"value": "id"
+										},
+										{
+											"key": "orderBy",
+											"value": "asc"
+										}
+									]
+								},
+								"description": "**獲取訂單詳情**\n\n**HTTP Method**:  \nGET {{host}}/api/self/orders\n\n**權限**：None\n\n**參數**：\n\n| 回傳名稱 | 參數型別 | 說明 | 必填 |\n| --- | --- | --- | --- |\n| page | integer | 頁數 | false |\n| prePage | integer | 每頁資料筆數 | false |\n| sortBy | string | 排序欄位 | false |\n| orderBy | string | 排序方式 (正/倒 序) | false, 只能是\\['asc', 'desc'\\] |\n\n**Body Params**：None\n\n**Response**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| code | integer | 回傳代碼 |\n| message | string | 錯誤時訊息提示 |\n| data | object | 回傳的資料 |\n| time | integer | 伺服器回應的時間 |\n\n**Data**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| id | integer | 訂單編號 |\n| status | string | 訂單狀態 |\n| date | string | 訂單日期 |\n| invoice_info | string/null | 發票資訊 |\n| product | object | 訂購商品的詳細資訊 |\n| consignee | object | 收貨人的資訊 |\n| auditRecord | array | 審核記錄 |\n\n**Product**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| id | integer | 商品編號 |\n| name | string | 商品名稱 |\n| mainImage | string/null | 主要圖片 |\n| description | string/null | 商品描述 |\n| price | integer | 商品價格 |\n| specification | string | 商品規格 |\n| installment | integer | 分期期數 |\n\n**Consignee**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| consigneeStatus | string | 收貨狀態 |\n| consigneeName | string | 收貨人名稱 |\n| consigneeCityRegion | string | 城市/地區 |\n| consigneePostalCode | string | 郵遞區號 |\n| consigneeAddress | string | 地址 |\n| consigneeLandline | string | 地線電話 |\n| consigneeMobile | string | 手機號碼 |\n| consigneeNotes | string | 備註 |\n| consigneeNeedsTaxId | integer | 是否需要統一編號 |\n| consigneeTaxId | string | 統一編號 |\n| consigneeCompanyTitle | string | 公司名稱 |\n\n**AuditRecord**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| reason | string | 審核原因 |\n\n**錯誤**：Unauthenticated. 未/錯誤 授權"
+							},
+							"response": []
+						},
+						{
+							"name": "取得個人通知",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{customer_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/self/notifications",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"self",
+										"notifications"
+									]
+								},
+								"description": "**獲取訂單詳情**\n\n**HTTP Method**:  \nGET {{host}}/api/self/orders\n\n**權限**：None\n\n**參數**：\n\n| 回傳名稱 | 參數型別 | 說明 | 必填 |\n| --- | --- | --- | --- |\n| page | integer | 頁數 | false |\n| prePage | integer | 每頁資料筆數 | false |\n| sortBy | string | 排序欄位 | false |\n| orderBy | string | 排序方式 (正/倒 序) | false, 只能是\\['asc', 'desc'\\] |\n\n**Body Params**：None\n\n**Response**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| code | integer | 回傳代碼 |\n| message | string | 錯誤時訊息提示 |\n| data | object | 回傳的資料 |\n| time | integer | 伺服器回應的時間 |\n\n**Data**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| id | integer | 訂單編號 |\n| status | string | 訂單狀態 |\n| date | string | 訂單日期 |\n| invoice_info | string/null | 發票資訊 |\n| product | object | 訂購商品的詳細資訊 |\n| consignee | object | 收貨人的資訊 |\n| auditRecord | array | 審核記錄 |\n\n**Product**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| id | integer | 商品編號 |\n| name | string | 商品名稱 |\n| mainImage | string/null | 主要圖片 |\n| description | string/null | 商品描述 |\n| price | integer | 商品價格 |\n| specification | string | 商品規格 |\n| installment | integer | 分期期數 |\n\n**Consignee**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| consigneeStatus | string | 收貨狀態 |\n| consigneeName | string | 收貨人名稱 |\n| consigneeCityRegion | string | 城市/地區 |\n| consigneePostalCode | string | 郵遞區號 |\n| consigneeAddress | string | 地址 |\n| consigneeLandline | string | 地線電話 |\n| consigneeMobile | string | 手機號碼 |\n| consigneeNotes | string | 備註 |\n| consigneeNeedsTaxId | integer | 是否需要統一編號 |\n| consigneeTaxId | string | 統一編號 |\n| consigneeCompanyTitle | string | 公司名稱 |\n\n**AuditRecord**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| reason | string | 審核原因 |\n\n**錯誤**：Unauthenticated. 未/錯誤 授權"
+							},
+							"response": []
+						},
+						{
+							"name": "更新個人通知已讀",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{customer_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"notifyIds\": [\n        9,\n        8\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/self/notifications/read",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"self",
+										"notifications",
+										"read"
+									]
+								},
+								"description": "**獲取訂單詳情**\n\n**HTTP Method**:  \nGET {{host}}/api/self/orders\n\n**權限**：None\n\n**參數**：\n\n| 回傳名稱 | 參數型別 | 說明 | 必填 |\n| --- | --- | --- | --- |\n| page | integer | 頁數 | false |\n| prePage | integer | 每頁資料筆數 | false |\n| sortBy | string | 排序欄位 | false |\n| orderBy | string | 排序方式 (正/倒 序) | false, 只能是\\['asc', 'desc'\\] |\n\n**Body Params**：None\n\n**Response**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| code | integer | 回傳代碼 |\n| message | string | 錯誤時訊息提示 |\n| data | object | 回傳的資料 |\n| time | integer | 伺服器回應的時間 |\n\n**Data**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| id | integer | 訂單編號 |\n| status | string | 訂單狀態 |\n| date | string | 訂單日期 |\n| invoice_info | string/null | 發票資訊 |\n| product | object | 訂購商品的詳細資訊 |\n| consignee | object | 收貨人的資訊 |\n| auditRecord | array | 審核記錄 |\n\n**Product**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| id | integer | 商品編號 |\n| name | string | 商品名稱 |\n| mainImage | string/null | 主要圖片 |\n| description | string/null | 商品描述 |\n| price | integer | 商品價格 |\n| specification | string | 商品規格 |\n| installment | integer | 分期期數 |\n\n**Consignee**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| consigneeStatus | string | 收貨狀態 |\n| consigneeName | string | 收貨人名稱 |\n| consigneeCityRegion | string | 城市/地區 |\n| consigneePostalCode | string | 郵遞區號 |\n| consigneeAddress | string | 地址 |\n| consigneeLandline | string | 地線電話 |\n| consigneeMobile | string | 手機號碼 |\n| consigneeNotes | string | 備註 |\n| consigneeNeedsTaxId | integer | 是否需要統一編號 |\n| consigneeTaxId | string | 統一編號 |\n| consigneeCompanyTitle | string | 公司名稱 |\n\n**AuditRecord**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| reason | string | 審核原因 |\n\n**錯誤**：Unauthenticated. 未/錯誤 授權"
+							},
+							"response": []
+						},
+						{
+							"name": "send Otp SMS",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{customer_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/sendOtpSMS",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"sendOtpSMS"
+									]
+								},
+								"description": "**獲取訂單詳情**\n\n**HTTP Method**:  \nGET {{host}}/api/self/orders\n\n**權限**：None\n\n**參數**：\n\n| 回傳名稱 | 參數型別 | 說明 | 必填 |\n| --- | --- | --- | --- |\n| page | integer | 頁數 | false |\n| prePage | integer | 每頁資料筆數 | false |\n| sortBy | string | 排序欄位 | false |\n| orderBy | string | 排序方式 (正/倒 序) | false, 只能是\\['asc', 'desc'\\] |\n\n**Body Params**：None\n\n**Response**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| code | integer | 回傳代碼 |\n| message | string | 錯誤時訊息提示 |\n| data | object | 回傳的資料 |\n| time | integer | 伺服器回應的時間 |\n\n**Data**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| id | integer | 訂單編號 |\n| status | string | 訂單狀態 |\n| date | string | 訂單日期 |\n| invoice_info | string/null | 發票資訊 |\n| product | object | 訂購商品的詳細資訊 |\n| consignee | object | 收貨人的資訊 |\n| auditRecord | array | 審核記錄 |\n\n**Product**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| id | integer | 商品編號 |\n| name | string | 商品名稱 |\n| mainImage | string/null | 主要圖片 |\n| description | string/null | 商品描述 |\n| price | integer | 商品價格 |\n| specification | string | 商品規格 |\n| installment | integer | 分期期數 |\n\n**Consignee**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| consigneeStatus | string | 收貨狀態 |\n| consigneeName | string | 收貨人名稱 |\n| consigneeCityRegion | string | 城市/地區 |\n| consigneePostalCode | string | 郵遞區號 |\n| consigneeAddress | string | 地址 |\n| consigneeLandline | string | 地線電話 |\n| consigneeMobile | string | 手機號碼 |\n| consigneeNotes | string | 備註 |\n| consigneeNeedsTaxId | integer | 是否需要統一編號 |\n| consigneeTaxId | string | 統一編號 |\n| consigneeCompanyTitle | string | 公司名稱 |\n\n**AuditRecord**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| reason | string | 審核原因 |\n\n**錯誤**：Unauthenticated. 未/錯誤 授權"
+							},
+							"response": []
+						},
+						{
+							"name": "send Otp verify",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{customer_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"code\": \"123456\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/customerOTPVerify",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"customerOTPVerify"
+									]
+								},
+								"description": "**獲取訂單詳情**\n\n**HTTP Method**:  \nGET {{host}}/api/self/orders\n\n**權限**：None\n\n**參數**：\n\n| 回傳名稱 | 參數型別 | 說明 | 必填 |\n| --- | --- | --- | --- |\n| page | integer | 頁數 | false |\n| prePage | integer | 每頁資料筆數 | false |\n| sortBy | string | 排序欄位 | false |\n| orderBy | string | 排序方式 (正/倒 序) | false, 只能是\\['asc', 'desc'\\] |\n\n**Body Params**：None\n\n**Response**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| code | integer | 回傳代碼 |\n| message | string | 錯誤時訊息提示 |\n| data | object | 回傳的資料 |\n| time | integer | 伺服器回應的時間 |\n\n**Data**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| id | integer | 訂單編號 |\n| status | string | 訂單狀態 |\n| date | string | 訂單日期 |\n| invoice_info | string/null | 發票資訊 |\n| product | object | 訂購商品的詳細資訊 |\n| consignee | object | 收貨人的資訊 |\n| auditRecord | array | 審核記錄 |\n\n**Product**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| id | integer | 商品編號 |\n| name | string | 商品名稱 |\n| mainImage | string/null | 主要圖片 |\n| description | string/null | 商品描述 |\n| price | integer | 商品價格 |\n| specification | string | 商品規格 |\n| installment | integer | 分期期數 |\n\n**Consignee**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| consigneeStatus | string | 收貨狀態 |\n| consigneeName | string | 收貨人名稱 |\n| consigneeCityRegion | string | 城市/地區 |\n| consigneePostalCode | string | 郵遞區號 |\n| consigneeAddress | string | 地址 |\n| consigneeLandline | string | 地線電話 |\n| consigneeMobile | string | 手機號碼 |\n| consigneeNotes | string | 備註 |\n| consigneeNeedsTaxId | integer | 是否需要統一編號 |\n| consigneeTaxId | string | 統一編號 |\n| consigneeCompanyTitle | string | 公司名稱 |\n\n**AuditRecord**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| reason | string | 審核原因 |\n\n**錯誤**：Unauthenticated. 未/錯誤 授權"
+							},
+							"response": []
+						},
+						{
+							"name": "刪除個人通知",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{customer_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"notifyIds\": [\n        10\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/self/notifications/delete",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"self",
+										"notifications",
+										"delete"
+									]
+								},
+								"description": "**獲取訂單詳情**\n\n**HTTP Method**:  \nGET {{host}}/api/self/orders\n\n**權限**：None\n\n**參數**：\n\n| 回傳名稱 | 參數型別 | 說明 | 必填 |\n| --- | --- | --- | --- |\n| page | integer | 頁數 | false |\n| prePage | integer | 每頁資料筆數 | false |\n| sortBy | string | 排序欄位 | false |\n| orderBy | string | 排序方式 (正/倒 序) | false, 只能是\\['asc', 'desc'\\] |\n\n**Body Params**：None\n\n**Response**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| code | integer | 回傳代碼 |\n| message | string | 錯誤時訊息提示 |\n| data | object | 回傳的資料 |\n| time | integer | 伺服器回應的時間 |\n\n**Data**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| id | integer | 訂單編號 |\n| status | string | 訂單狀態 |\n| date | string | 訂單日期 |\n| invoice_info | string/null | 發票資訊 |\n| product | object | 訂購商品的詳細資訊 |\n| consignee | object | 收貨人的資訊 |\n| auditRecord | array | 審核記錄 |\n\n**Product**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| id | integer | 商品編號 |\n| name | string | 商品名稱 |\n| mainImage | string/null | 主要圖片 |\n| description | string/null | 商品描述 |\n| price | integer | 商品價格 |\n| specification | string | 商品規格 |\n| installment | integer | 分期期數 |\n\n**Consignee**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| consigneeStatus | string | 收貨狀態 |\n| consigneeName | string | 收貨人名稱 |\n| consigneeCityRegion | string | 城市/地區 |\n| consigneePostalCode | string | 郵遞區號 |\n| consigneeAddress | string | 地址 |\n| consigneeLandline | string | 地線電話 |\n| consigneeMobile | string | 手機號碼 |\n| consigneeNotes | string | 備註 |\n| consigneeNeedsTaxId | integer | 是否需要統一編號 |\n| consigneeTaxId | string | 統一編號 |\n| consigneeCompanyTitle | string | 公司名稱 |\n\n**AuditRecord**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| reason | string | 審核原因 |\n\n**錯誤**：Unauthenticated. 未/錯誤 授權"
+							},
+							"response": []
+						},
+						{
+							"name": "已讀個人全部通知",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{customer_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/self/notifications/readAll",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"self",
+										"notifications",
+										"readAll"
+									]
+								},
+								"description": "**獲取訂單詳情**\n\n**HTTP Method**:  \nGET {{host}}/api/self/orders\n\n**權限**：None\n\n**參數**：\n\n| 回傳名稱 | 參數型別 | 說明 | 必填 |\n| --- | --- | --- | --- |\n| page | integer | 頁數 | false |\n| prePage | integer | 每頁資料筆數 | false |\n| sortBy | string | 排序欄位 | false |\n| orderBy | string | 排序方式 (正/倒 序) | false, 只能是\\['asc', 'desc'\\] |\n\n**Body Params**：None\n\n**Response**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| code | integer | 回傳代碼 |\n| message | string | 錯誤時訊息提示 |\n| data | object | 回傳的資料 |\n| time | integer | 伺服器回應的時間 |\n\n**Data**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| id | integer | 訂單編號 |\n| status | string | 訂單狀態 |\n| date | string | 訂單日期 |\n| invoice_info | string/null | 發票資訊 |\n| product | object | 訂購商品的詳細資訊 |\n| consignee | object | 收貨人的資訊 |\n| auditRecord | array | 審核記錄 |\n\n**Product**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| id | integer | 商品編號 |\n| name | string | 商品名稱 |\n| mainImage | string/null | 主要圖片 |\n| description | string/null | 商品描述 |\n| price | integer | 商品價格 |\n| specification | string | 商品規格 |\n| installment | integer | 分期期數 |\n\n**Consignee**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| consigneeStatus | string | 收貨狀態 |\n| consigneeName | string | 收貨人名稱 |\n| consigneeCityRegion | string | 城市/地區 |\n| consigneePostalCode | string | 郵遞區號 |\n| consigneeAddress | string | 地址 |\n| consigneeLandline | string | 地線電話 |\n| consigneeMobile | string | 手機號碼 |\n| consigneeNotes | string | 備註 |\n| consigneeNeedsTaxId | integer | 是否需要統一編號 |\n| consigneeTaxId | string | 統一編號 |\n| consigneeCompanyTitle | string | 公司名稱 |\n\n**AuditRecord**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| reason | string | 審核原因 |\n\n**錯誤**：Unauthenticated. 未/錯誤 授權"
+							},
+							"response": []
+						},
+						{
+							"name": "修改個人密碼",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{customer_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"originalPassword\": \"1234567\",\n    \"password\": \"123456\",\n    \"passwordConfirmation\": \"123456\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/self/change/password",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"self",
+										"change",
+										"password"
+									]
+								},
+								"description": "**修改密碼**\n\n**HTTP Method**:  \nPOST {{host}}/api/self/change/password\n\n**權限**：None\n\n**參數**：None\n\n**Body Params**：JSON\n\n| 參數名稱 | 參數型別 | 說明 | 必填 |\n| --- | --- | --- | --- |\n| originalPassword | string | 原始密碼 | true |\n| password | string | 新密碼 | true |\n| passwordConfirmation | string | 確認新密碼 | true |\n\n**Response**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| code | integer | 回傳代碼 |\n| message | string | 錯誤時訊息提示 |\n| data | object | 回傳的資料 |\n| time | integer | 伺服器回應的時間 |\n\n**Data**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| message | string | 密碼更新訊息 |\n\n**錯誤**：Unauthenticated. 未/錯誤 授權"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Products 商品",
+					"item": [
+						{
+							"name": "取得商品列表",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/product?page=1&prePage=10&sortBy=id&orderBy=asc",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"product"
+									],
+									"query": [
+										{
+											"key": "regionId",
+											"value": "6",
+											"disabled": true
+										},
+										{
+											"key": "brandId",
+											"value": "15",
+											"disabled": true
+										},
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "prePage",
+											"value": "10"
+										},
+										{
+											"key": "sortBy",
+											"value": "id"
+										},
+										{
+											"key": "orderBy",
+											"value": "asc"
+										}
+									]
+								},
+								"description": "**獲取商品**\n\n**HTTP Method**:  \nGET {{host}}/api/product\n\n**權限**：None\n\n**參數**：\n\n| 參數名稱 | 參數型別 | 說明 | 必填 |\n| --- | --- | --- | --- |\n| regionId | integer | 商品分區ID | false |\n| brandId | integer | 商品品牌ID | false |\n| page | integer | 頁數 | false |\n| prePage | integer | 每頁資料筆數 | false |\n| sortBy | string | 排序欄位 | false |\n| orderBy | string | 正/倒 序 | false |\n\n**Body Params**：None\n\n**Response**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| code | integer | 回傳代碼 |\n| message | string | 錯誤時訊息提示 |\n| meta | object | 分頁資訊 |\n| data | array | 產品資料 |\n| time | integer | 伺服器回應的時間 |\n\n**Meta**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| current_page | integer | 目前頁數 |\n| last_page | integer | 最後一頁的頁碼 |\n| per_page | integer | 每頁的資料筆數 |\n| total | integer | 總筆數 |\n\n**Data**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| id | integer | 產品編號 |\n| name | string | 產品名稱 |\n| mainImage | string/null | 主要圖片 |\n| description | string/null | 產品描述 |\n| option | integer | 選項 |\n| price | integer | 價格 |\n\n**錯誤**：參數驗證錯誤"
+							},
+							"response": []
+						},
+						{
+							"name": "取得熱門商品列表",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/product/popular",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"product",
+										"popular"
+									]
+								},
+								"description": "---\n\n**獲取熱門商品**\n\n**HTTP Method**:  \nGET {{host}}/api/product/popular\n\n**權限**：None\n\n**參數**：None\n\n**Body Params**：None\n\n**Response**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| code | integer | 回傳代碼 |\n| message | string | 錯誤時訊息提示 |\n| data | array | 熱門商品資料 |\n| time | integer | 伺服器回應的時間 |\n\n**Data**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| id | integer | 商品編號 |\n| name | string | 商品名稱 |\n| mainImage | string/null | 主要圖片 |\n| description | string/null | 產品描述 |\n| option | integer | 選項 |\n| price | integer | 價格 |"
+							},
+							"response": []
+						},
+						{
+							"name": "搜尋商品",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/product/search?param=gogoro",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"product",
+										"search"
+									],
+									"query": [
+										{
+											"key": "param",
+											"value": "gogoro"
+										}
+									]
+								},
+								"description": "**商品搜尋**\n\n**HTTP Method**:  \nGET {{host}}/api/product/search\n\n**權限**：None\n\n**參數**：\n\n| 參數名稱 | 參數型別 | 說明 | 必填 |\n| --- | --- | --- | --- |\n| param | string | 搜尋關鍵字 | true |\n\n**Body Params**：None\n\n**Response**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| code | integer | 回傳代碼 |\n| message | string | 錯誤時訊息提示 |\n| data | array | 搜尋結果資料 |\n| time | integer | 伺服器回應的時間 |\n\n**Data**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| id | integer | 商品編號 |\n| name | string | 商品名稱 |\n| mainImage | string/null | 主要圖片 |\n| description | string/null | 商品描述 |\n| option | integer | 選項 |\n| price | integer | 價格 |"
+							},
+							"response": []
+						},
+						{
+							"name": "取得商品明細",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{customer_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/product/1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"product",
+										"1"
+									]
+								},
+								"description": "**取得商品詳細**\n\n**HTTP Method**:  \nGET {{host}}/api/product/{商品ID}\n\n**權限**：None\n\n**參數**：None\n\n**Body Params**：None\n\n**Response**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| code | integer | 回傳代碼 |\n| message | string | 錯誤時訊息提示 |\n| data | object | 商品的詳細資訊 |\n| time | integer | 伺服器回應的時間 |\n\n**Data**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| id | integer | 商品編號 |\n| name | string | 商品名稱 |\n| mainImage | string/null | 主要圖片 |\n| additionalMedia | array | 附加媒體 |\n| specifications | array | 商品規格 |\n| totalPrice | integer | 總價格 |\n| description | string/null | 商品描述 |\n| region | object | 商品分區資訊 |\n| brand | object | 商品品牌資訊 |\n| installment | object | 分期資訊 |\n| detailContent | string/null | 商品詳細內容 |\n\n**Region**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| id | integer | 商品分區編號 |\n| name | string | 區域名稱 |\n| icon | string/null | 商品分區圖示 |\n\n**Brand**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| id | integer | 品牌編號 |\n| name | string | 品牌名稱 |\n\n**Installment**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| installmentType | object | 分期型態 |\n| options | array | 分期選項 |\n\n**InstallmentType**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| id | integer | 分期型態編號 |\n| name | string | 分期型態名稱 |\n\n**Options**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| option | integer | 分期選項 |\n| price | integer | 價格 |"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Region 商品分區",
+					"item": [
+						{
+							"name": "取得商品分區選項",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/region/options",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"region",
+										"options"
+									]
+								},
+								"description": "**取得商品分區選項**\n\n**HTTP Method**:  \nGET {{host}}/api/region/options\n\n**權限**：None\n\n**參數**：None\n\n**Body Params**：None\n\n**Response**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| code | integer | 回傳代碼 |\n| message | string | 錯誤時訊息提示 |\n| time | integer | 伺服器回應的時間 |\n| data | array | 區域選項的資料 |\n\n**Data**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| id | integer | 商品分區編號 |\n| name | string | 商品分區名稱 |\n| icon | string/null | 商品分區圖示 |"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Brand 商品品牌",
+					"item": [
+						{
+							"name": "取得商品品牌選項",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/brand/options?regionId=3",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"brand",
+										"options"
+									],
+									"query": [
+										{
+											"key": "regionId",
+											"value": "3"
+										}
+									]
+								},
+								"description": "**取得品牌選項**\n\n**HTTP Method**:  \nGET {{host}}/api/brand/options\n\n**權限**：None\n\n**參數**：\n\n| 參數名稱 | 參數型別 | 說明 | 必填* |\n| --- | --- | --- | --- |\n| regionId | integer | 區域編號 | false |\n\n**Body Params**：None\n\n**Response**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| code | integer | 回傳代碼 |\n| message | string | 錯誤時訊息提示 |\n| time | integer | 伺服器回應的時間 |\n| data | array | 品牌選項的資料 |\n\n**Data**:\n\n| 回傳名稱 | 說明 |\n| --- | --- |\n| id | 品牌編號 |\n| name | 品牌名稱 |"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Order 訂單",
+					"item": [
+						{
+							"name": "建立訂單",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{customer_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"productId\": 1,\n    \"specification\": \"晶礦銀\",\n    \"installment\": 24,\n    \"price\": 5469,\n    \"identityType\": \"一般\",\n    \"idIssuedDate\": \"1990-01-01\",\n    \"idIssuedLocation\": \"北市\",\n    \"idIssuedType\": \"換發\",\n    \"birthDate\": \"1990-01-01\",\n    \"residenceCityRegion\": \"Taichung\",\n    \"residenceAddress\": \"123 Main St, Taipei\",\n    \"residencePostalCode\": \"100\",\n    \"residenceLandline\": \"02-1234567\",\n    \"contactEmail\": \"user@example.com\",\n    \"mobile\": \"0912345678\",\n    \"currentCityRegion\": \"Taichung\",\n    \"currentAddress\": \"123 Main St, Taipei\",\n    \"currentPostalCode\": \"100\",\n    \"currentLandline\": \"02-1234567\",\n    \"telecomOperator\": \"台灣之星\",\n    \"employmentStatus\": true,\n    \"companyName\": \"Tech Co.\",\n    \"housingOwnership\": \"自有/配偶\",\n    \"seniority\": \"一年\",\n    \"hasCreditCard\": true,\n    \"salary\": \"0-5000\",\n    \"companyPhone\": \"02-1234569\",\n    \"companyPhoneExtension\": \"123\",\n    \"consultationTime\": \"9 AM - 5 PM\",\n    \"precautions\": \"Handle with care\",\n    \"isConfidential\": false,\n    \"contact1Name\": \"John Doe\",\n    \"contact1Relationship\": \"朋友\",\n    \"contact1Mobile\": \"0987654321\",\n    \"contact2Name\": \"Jane Smith\",\n    \"contact2Relationship\": \"同學\",\n    \"contact2Mobile\": \"0976543210\",\n    \"consigneeName\": \"Mary Johnson\",\n    \"consigneeCityRegion\": \"Taichung\",\n    \"consigneePostalCode\": \"400\",\n    \"consigneeAddress\": \"789 Some St, Taichung\",\n    \"consigneeLandline\": \"04-1234567\",\n    \"consigneeMobile\": \"0932109876\",\n    \"consigneeNotes\": \"Please deliver before 5 PM.\",\n    \"consigneeNeedsTaxId\": true,\n    \"consigneeTaxId\": \"12345678\",\n    \"consigneeCompanyTitle\": \"Tech Co.\",\n    \"mediaIds\": {\n        \"frontOfIdCard\": [\n            11\n        ],\n        \"backOfIdCard\": [\n            12\n        ],\n        \"promissoryNote\": [\n            13\n        ],\n        \"agreement\": [\n            14\n        ]\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/order",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"order"
+									]
+								},
+								"description": "## {{ host }} /admin/api/order\n\n規格 沒有就給 null"
+							},
+							"response": []
+						},
+						{
+							"name": "訂單補件",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{customer_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"mediaIds\": {\n        \"supplement\": [\n            31\n        ]\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/order/supplement/1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"order",
+										"supplement",
+										"1"
+									]
+								},
+								"description": "## {{ host }} /admin/api/order\n\n規格 沒有就給 null"
+							},
+							"response": []
+						},
+						{
+							"name": "取得訂單選項組",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/order/options",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"order",
+										"options"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "上傳訂單資料圖片",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{customer_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "frontOfIdCard",
+											"description": "身分證正面",
+											"type": "file",
+											"src": "/Users/huang_chun/Desktop/ezpay/ddccc3f2-2aa9-4e92-9578-41d035af66ea.jpg"
+										},
+										{
+											"key": "backOfIdCard",
+											"description": "身分證背面",
+											"type": "file",
+											"src": "/Users/huang_chun/Desktop/ezpay/4f3bafb8-502b-400f-ab63-a819044e2621.jpg"
+										},
+										{
+											"key": "frontOfIdentity",
+											"description": "其他證件正面",
+											"type": "file",
+											"src": "/Users/huang_chun/Desktop/ezpay/s_新版悠遊卡學生證(正面反面示意圖) 2.jpg",
+											"disabled": true
+										},
+										{
+											"key": "backOfIdentity",
+											"description": "其他證件背面",
+											"type": "file",
+											"src": "/Users/huang_chun/Desktop/ezpay/s_新版悠遊卡學生證(正面反面示意圖) 3.jpg",
+											"disabled": true
+										},
+										{
+											"key": "promissoryNote",
+											"description": "本票",
+											"type": "file",
+											"src": "/Users/huang_chun/Desktop/photo_2024-02-16_18-20-34.jpg"
+										},
+										{
+											"key": "agreement",
+											"description": "約定事項",
+											"type": "file",
+											"src": "/Users/huang_chun/Desktop/photo_2024-02-16_18-18-55.jpg"
+										},
+										{
+											"key": "invoice",
+											"type": "file",
+											"src": "/Users/huang_chun/Desktop/ezpay/下載.png",
+											"disabled": true
+										},
+										{
+											"key": "supplement[0]",
+											"type": "file",
+											"src": "/Users/huang_chun/Desktop/ezpay/下載.png",
+											"disabled": true
+										},
+										{
+											"key": "supplement[1]",
+											"type": "file",
+											"src": "/Users/huang_chun/Desktop/ezpay/下載.png",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/api/uploadMedia/order",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"uploadMedia",
+										"order"
+									],
+									"query": [
+										{
+											"key": "image",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Carousel 輪播",
+					"item": [
+						{
+							"name": "取得輪播列表",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/carousel",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"carousel"
+									]
+								},
+								"description": "**取得輪播圖片**\n\n**HTTP Method**:  \nGET {{host}}/api/carousel\n\n**權限**：None\n\n**參數**：None\n\n**Body Params**：None\n\n**Response**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| code | integer | 回傳代碼 |\n| message | string | 錯誤時訊息提示 |\n| data | array | 回傳資料 |\n| time | integer | 伺服器回應的時間 |\n\n**Data**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| productUrl | string | 圖片要連結的url |\n| image | array\\[string\\] | 圖片連結 |"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "常見問題",
+					"item": [
+						{
+							"name": "取得常見問題列表",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/faq/list",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"faq",
+										"list"
+									]
+								},
+								"description": "**獲取商品**\n\n**HTTP Method**:  \nGET {{host}}/api/faq/list\n\n**權限**：None\n\n**參數**：None\n\n**Body Params**：None\n\n**Response**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| code | integer | 回傳代碼 |\n| message | string | 錯誤時訊息提示 |\n| meta | object | 分頁資訊 |\n| data | array | 回傳資料 |\n| time | integer | 伺服器回應的時間 |\n\n**Data**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| id | integer | 常見問題類別 Id |\n| name | string | 常見問題類別名稱 |\n| faqs | array | 常見問題列表 |\n\n**faqs:**\n\n| **name** | 型別 | 說明 |\n| --- | --- | --- |\n| id | integer | 常見問題 Id |\n| question | string | 常見問題 |\n| answer | string | 問題回答 |\n| visible | bool | 可見的 |"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "登入",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.unset(\"customer_token\");",
+									"const result = JSON.parse(responseBody);",
+									"pm.environment.set(\"customer_token\", result.data.token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idNumber\": \"B199210752\",\n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/login",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						},
+						"description": "**登入**\n\n**HTTP Method**:  \nPOST {{host}}/api/login\n\n**權限**：None\n\n**參數**：None\n\n**Body Params**：JSON\n\n| 回傳名稱 | 回傳型別 | 說明 | 必填 |\n| --- | --- | --- | --- |\n| idNumber | string | 身分證字號 | true |\n| password | string | 密碼 | true |\n\n**Response**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| code | integer | 回傳代碼 |\n| data | object | 回傳的資料 |\n| time | integer | 伺服器回應的時間 |\n\n**Data**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| token | string | 認證令牌 |\n\n**錯誤**：資料驗證相關\n\n帳號  \nA196104836  \nB199210752"
+					},
+					"response": []
+				},
+				{
+					"name": "忘記密碼",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.unset(\"customer_token\");",
+									"const result = JSON.parse(responseBody);",
+									"pm.environment.set(\"customer_token\", result.data.token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"kk20210112@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/forgotPassword",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"forgotPassword"
+							]
+						},
+						"description": "**登入**\n\n**HTTP Method**:  \nPOST {{host}}/api/login\n\n**權限**：None\n\n**參數**：None\n\n**Body Params**：JSON\n\n| 回傳名稱 | 回傳型別 | 說明 | 必填 |\n| --- | --- | --- | --- |\n| idNumber | string | 身分證字號 | true |\n| password | string | 密碼 | true |\n\n**Response**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| code | integer | 回傳代碼 |\n| data | object | 回傳的資料 |\n| time | integer | 伺服器回應的時間 |\n\n**Data**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| token | string | 認證令牌 |\n\n**錯誤**：資料驗證相關\n\n帳號  \nA196104836  \nB199210752"
+					},
+					"response": []
+				},
+				{
+					"name": "password reset",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/password/reset?email=kk20210112%40gmail.com&token=f5aca655d9ca90f00e8ddefd841624d31b582509da8794d7aeba17063d55f2c8",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"password",
+								"reset"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "kk20210112%40gmail.com"
+								},
+								{
+									"key": "token",
+									"value": "f5aca655d9ca90f00e8ddefd841624d31b582509da8794d7aeba17063d55f2c8"
+								}
+							]
+						},
+						"description": "**綠界 付款 / 產生訂單**\n\n**HTTP Method**:  \nPOST {{host}}/api/facebook/link\n\n**權限**：None\n\n**參數**：None\n\n**Response**:\n\nHTML\n\n*   *Fb 登入頁面*\n    \n\n![](https://www.pcmall.com.tw/upload/mall/1/blog/12b5e4c75ec6d/5e1eb6f1ba508.PNG)\n\n**錯誤**：資料驗證相關\n\n# 目前沒有後續動作 測試站目前無使用 ssl 導致 fb 開發者工具無法處理登入相關"
+					},
+					"response": []
+				},
+				{
+					"name": "password reset Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/test/change/password",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"test",
+								"change",
+								"password"
+							]
+						},
+						"description": "**綠界 付款 / 產生訂單**\n\n**HTTP Method**:  \nPOST {{host}}/api/facebook/link\n\n**權限**：None\n\n**參數**：None\n\n**Response**:\n\nHTML\n\n*   *Fb 登入頁面*\n    \n\n![](https://www.pcmall.com.tw/upload/mall/1/blog/12b5e4c75ec6d/5e1eb6f1ba508.PNG)\n\n**錯誤**：資料驗證相關\n\n# 目前沒有後續動作 測試站目前無使用 ssl 導致 fb 開發者工具無法處理登入相關"
+					},
+					"response": []
+				},
+				{
+					"name": "忘記密碼-重設密碼",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.unset(\"customer_token\");",
+									"const result = JSON.parse(responseBody);",
+									"pm.environment.set(\"customer_token\", result.data.token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"test@example.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/forgotPassword",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"forgotPassword"
+							]
+						},
+						"description": "**登入**\n\n**HTTP Method**:  \nPOST {{host}}/api/login\n\n**權限**：None\n\n**參數**：None\n\n**Body Params**：JSON\n\n| 回傳名稱 | 回傳型別 | 說明 | 必填 |\n| --- | --- | --- | --- |\n| idNumber | string | 身分證字號 | true |\n| password | string | 密碼 | true |\n\n**Response**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| code | integer | 回傳代碼 |\n| data | object | 回傳的資料 |\n| time | integer | 伺服器回應的時間 |\n\n**Data**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| token | string | 認證令牌 |\n\n**錯誤**：資料驗證相關\n\n帳號  \nA196104836  \nB199210752"
+					},
+					"response": []
+				},
+				{
+					"name": "綠界 付款 / 產生訂單",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{customer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"installmentIds\": [\n        4,\n        25\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/installment/payment",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"installment",
+								"payment"
+							]
+						},
+						"description": "**綠界 付款 / 產生訂單**\n\n**HTTP Method**:  \nPOST {{host}}/api/installment/payment\n\n**權限**：None\n\n**參數**：None\n\n**Body Params**：JSON\n\n| 回傳名稱 | 回傳型別 | 說明 | 必填 |\n| --- | --- | --- | --- |\n| installmentIds | array | 分期單 Id | true |\n\n**Response**:\n\nHTML\n\n**綠界科技 付款頁面****\n\n![](https://developers.ecpay.com.tw/wp-content/uploads/2022/01/aio.png)\n\n**錯誤**：資料驗證相關\n\n**message:**\n\n**內有不合法 id**\n\n```\nThe installment ids is not valid for the order installments.\n\n```\n\n**id 不屬於同一個訂單**\n\n```\nInstallment ids do not belong to the same order.\n\n```\n\n**未選擇 繳納 滯納金**\n\n```\nThis order has outstanding late fees.\n\n```"
+					},
+					"response": []
+				},
+				{
+					"name": "綠界 付款 / 產生訂單1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{customer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://payment-stage.ecpay.com.tw/Cashier/AioCheckOut/V5",
+							"protocol": "https",
+							"host": [
+								"payment-stage",
+								"ecpay",
+								"com",
+								"tw"
+							],
+							"path": [
+								"Cashier",
+								"AioCheckOut",
+								"V5"
+							]
+						},
+						"description": "**綠界 付款 / 產生訂單**\n\n**HTTP Method**:  \nPOST {{host}}/api/installment/payment\n\n**權限**：None\n\n**參數**：None\n\n**Body Params**：JSON\n\n| 回傳名稱 | 回傳型別 | 說明 | 必填 |\n| --- | --- | --- | --- |\n| installmentIds | array | 分期單 Id | true |\n\n**Response**:\n\nHTML\n\n**綠界科技 付款頁面  \n**\n\n![](https://developers.ecpay.com.tw/wp-content/uploads/2022/01/aio.png)\n\n**錯誤**：資料驗證相關"
+					},
+					"response": []
+				},
+				{
+					"name": "綠界 付款完成 api",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{customer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "MerchantID",
+									"value": "2000132",
+									"type": "text"
+								},
+								{
+									"key": "MerchantTradeNo",
+									"value": "Test1510056539",
+									"type": "text"
+								},
+								{
+									"key": "PaymentDate",
+									"value": "2017/11/02 16:22:18",
+									"type": "text"
+								},
+								{
+									"key": "PaymentType",
+									"value": "Credit_CreditCard",
+									"type": "text"
+								},
+								{
+									"key": "PaymentTypeChargeFee",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "RtnCode",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "RtnMsg",
+									"value": "交易成功",
+									"type": "text"
+								},
+								{
+									"key": "SimulatePaid",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "StoreID",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "TradeAmt",
+									"value": "100",
+									"type": "text"
+								},
+								{
+									"key": "TradeDate",
+									"value": "2017/11/07 20:08:59",
+									"type": "text"
+								},
+								{
+									"key": "TradeNo",
+									"value": "17110720085960236789",
+									"type": "text"
+								},
+								{
+									"key": "CheckMacValue",
+									"value": "9139AF2AC5D0F9EBC5F3CD44064F666AAA62F0B202B95B341CC25E080EA4FC6E",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/installment/payment/result",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"installment",
+								"payment",
+								"result"
+							]
+						},
+						"description": "**綠界 付款 / 產生訂單**\n\n**HTTP Method**:  \nPOST {{host}}/api/installment/payment\n\n**權限**：None\n\n**參數**：None\n\n**Body Params**：JSON\n\n| 回傳名稱 | 回傳型別 | 說明 | 必填 |\n| --- | --- | --- | --- |\n| installmentIds | array | 分期單 Id | true |\n\n**Response**:\n\nHTML\n\n**綠界科技 付款頁面  \n**\n\n![](https://developers.ecpay.com.tw/wp-content/uploads/2022/01/aio.png)\n\n**錯誤**：資料驗證相關"
+					},
+					"response": []
+				},
+				{
+					"name": "fb login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/facebook/auth",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"facebook",
+								"auth"
+							]
+						},
+						"description": "**綠界 付款 / 產生訂單**\n\n**HTTP Method**:  \nPOST {{host}}/api/facebook/link\n\n**權限**：None\n\n**參數**：None\n\n**Response**:\n\nHTML\n\n*   *Fb 登入頁面*\n    \n\n![](https://www.pcmall.com.tw/upload/mall/1/blog/12b5e4c75ec6d/5e1eb6f1ba508.PNG)\n\n**錯誤**：資料驗證相關\n\n# 目前沒有後續動作 測試站目前無使用 ssl 導致 fb 開發者工具無法處理登入相關"
+					},
+					"response": []
+				},
+				{
+					"name": "fb login Callback",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/facebook/authCallback",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"facebook",
+								"authCallback"
+							]
+						},
+						"description": "**綠界 付款 / 產生訂單**\n\n**HTTP Method**:  \nPOST {{host}}/api/facebook/link\n\n**權限**：None\n\n**參數**：None\n\n**Response**:\n\nHTML\n\n*   *Fb 登入頁面*\n    \n\n![](https://www.pcmall.com.tw/upload/mall/1/blog/12b5e4c75ec6d/5e1eb6f1ba508.PNG)\n\n**錯誤**：資料驗證相關\n\n# 目前沒有後續動作 測試站目前無使用 ssl 導致 fb 開發者工具無法處理登入相關"
+					},
+					"response": []
+				},
+				{
+					"name": "登出",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const result = JSON.parse(responseBody);",
+									"if (result.code == 1) {",
+									"    pm.environment.unset(\"customer_token\");",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{customer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/logout",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"logout"
+							]
+						},
+						"description": "**登出**\n\n**HTTP Method**:  \nPOST {{host}}/api/logout\n\n**權限**：None\n\n**參數**：None\n\n**Body Params**：None\n\n**Response**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| code | integer | 回傳代碼 |\n| data | object | 回傳的資料 |\n| time | integer | 伺服器回應的時間 |\n\n**Data**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| message | string | 登出相關的訊息 |\n\n**錯誤**：Unauthenticated. 未/錯誤 授權"
+					},
+					"response": []
+				},
+				{
+					"name": "註冊",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idNumber\": \"A168801777\",\n    \"name\": \"顧客1\",\n    \"password\": \"123456\",\n    \"passwordConfirmation\": \"123456\",\n    \"identity\": \"一般\",\n    \"gender\": \"male\",\n    \"birthday\": \"1999-1-1\",\n    \"phone\": \"0941240021\",\n    \"email\": \"test@example.com\",\n    \"lineId\": \"321124124315\",\n    \"residencePhone\": \"0412311244\",\n    \"currentPhone\": \"093123141\",\n    \"residenceAddress\": \"456 Another St, Taipei\",\n    \"currentAddress\": \"456 Another St, Taipei\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/register",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"register"
+							]
+						},
+						"description": "**註冊**\n\n**HTTP Method**:  \nPOST {{host}}/api/register\n\n**權限**：None\n\n**參數**：None\n\n**Body Params**：JSON\n\n| 回傳名稱 | 回傳型別 | 說明 | 必填 |\n| --- | --- | --- | --- |\n| idNumber | string | 身分證字號 | true |\n| name | string | 姓名 | true |\n| password | string | 密碼 | true |\n| identity | string | 身份別 | true |\n| gender | string | 性別 | true |\n| birthday | string | 生日 | true |\n| phone | string | 手機號碼 | true |\n| email | string | 電子郵件帳號 | true |\n| lineId | string | Line ID | false |\n| residencePhone | string | 戶籍電話 | false |\n| currentPhone | string | 現住電話 | false |\n| residenceAddress | string | 戶籍地址 | true |\n| currentAddress | string | 現住地址 | true |\n\n**Response**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| code | integer | 回傳代碼 |\n| data | object | 回傳的資料 |\n| time | integer | 伺服器回應的時間 |\n\n**Data**:\n\n| 回傳名稱 | 回傳型別 | 說明 |\n| --- | --- | --- |\n| message | string | 註冊成功訊息 |\n\n**錯誤**：參數驗證錯誤"
+					},
+					"response": []
+				},
+				{
+					"name": "Pusher 客戶私人頻道測試",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{customer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-CSRF-Token",
+								"value": "oThvjCX4r34nw7NZKG9PfHO7kF2TTQO2uSJtBV6K",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/broadcasting/auth?socket_id=6896.6657525&channel_name=private-customer-user-2",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"broadcasting",
+								"auth"
+							],
+							"query": [
+								{
+									"key": "socket_id",
+									"value": "6896.6657525"
+								},
+								{
+									"key": "channel_name",
+									"value": "private-customer-user-2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "qrcode",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let response = pm.response.json();",
+									"let template;",
+									"",
+									"if (response.data && response.data.QRCode) {",
+									"    template = `",
+									"        <div style=\"display:flex;justify-content:center;align-items:center;padding:10px;\">",
+									"            <img src=\"data:image/png;base64,${response.data.QRCode}\" width=\"200\" height=\"200\">",
+									"        </div>`;",
+									"} else {",
+									"    template = `",
+									"        <div style=\"display:flex;justify-content:center;align-items:center;padding:10px;\">",
+									"            No QR code found in response.",
+									"        </div>`;",
+									"}",
+									"",
+									"// 在Visualizer中显示QR码或者错误信息",
+									"pm.visualizer.set(template);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/mobileVerifyQRCode",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"mobileVerifyQRCode"
+							]
+						},
+						"description": "# 暫時無功能"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://laravel.baseplate"
+		}
+	]
+}

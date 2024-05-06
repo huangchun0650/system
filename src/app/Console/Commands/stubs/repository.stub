@@ -1,0 +1,11 @@
+<?php
+
+namespace YFDev\System\App\Repositories\DummyNamespace;
+
+use YFDev\System\App\Models\DummyModel;
+use YFDev\System\App\Repositories\BaseRepository;
+
+class DummyClassRepository extends BaseRepository implements DummyClassRepositoryInterface
+{
+    protected $model = DummyModel::class;
+}

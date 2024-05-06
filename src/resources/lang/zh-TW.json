@@ -1,0 +1,8 @@
+{
+  "404 error message":"404錯誤 - 找不著頁面",
+  "Reset Password Notification":"密碼重設通知",
+  "You are receiving this email because we received a password reset request for your account.":"您收到這封電子郵件是因為我們收到了您帳戶的密碼重設請求。",
+  "Reset Password":"重設密碼",
+  "This password reset link will expire in :count minutes.":"此密碼重設連結將於 :count 分鐘後過期。",
+  "If you did not request a password reset, no further action is required.":"如果您未要求密碼重設，請忽略此電子郵件。"
+}

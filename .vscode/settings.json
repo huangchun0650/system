@@ -1,0 +1,10 @@
+{
+    "commentTranslate.multiLineMerge": true,
+    "[php]": {
+        "editor.defaultFormatter": "open-southeners.laravel-pint",
+
+        "editor.formatOnSave": true
+    },
+    "laravel-pint.enable": true,
+    "php-cs-fixer.onsave": false
+}

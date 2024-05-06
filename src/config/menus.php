@@ -1,0 +1,60 @@
+<?php
+
+return [
+    [
+        'sort_order'  => 1,
+        'name'        => '使用者管理',
+        'code'        => 'admin',
+        'parent_id'   => NULL,
+        'permissions' => [1, 2, 3, 4, 5],
+        'rules'       => [1, 2],
+    ],
+    [
+        'sort_order'  => 2,
+        'name'        => '選單管理',
+        'code'        => 'menu',
+        'parent_id'   => NULL,
+        'permissions' => [6, 7, 8, 9, 10],
+        'rules'       => [3, 4],
+    ],
+    [
+        'sort_order'  => 3,
+        'name'        => '系統設定',
+        'code'        => 'setting',
+        'parent_id'   => NULL,
+        'permissions' => [],
+        'rules'       => NULL,
+    ],
+    [
+        'sort_order'  => 1,
+        'name'        => '選單規則',
+        'code'        => 'menuRule',
+        'parent_id'   => 3,
+        'permissions' => [11],
+        'rules'       => [5],
+    ],
+    [
+        'sort_order'  => 2,
+        'name'        => '規則設定',
+        'code'        => 'rule',
+        'parent_id'   => 3,
+        'permissions' => [11],
+        'rules'       => [5],
+    ],
+    [
+        'sort_order'  => 5,
+        'name'        => '組件測試',
+        'code'        => 'testing',
+        'parent_id'   => NULL,
+        'permissions' => [12],
+        'rules'       => [6],
+    ],
+    [
+        'sort_order'  => 4,
+        'name'        => '權限管理',
+        'code'        => 'role',
+        'parent_id'   => NULL,
+        'permissions' => [13, 14, 15, 16, 17],
+        'rules'       => [7, 8],
+    ],
+];

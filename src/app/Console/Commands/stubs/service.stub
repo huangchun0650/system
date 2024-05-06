@@ -1,0 +1,142 @@
+<?php
+
+namespace YFDev\System\App\Services\DummyNamespace;
+
+use Exception;
+use YFDev\System\App\Services\BaseService;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Illuminate\Auth\AuthManager;
+use YFDev\System\App\Http\Transforms\Models\DummyClassTransform;
+use YFDev\System\App\Repositories\DummyNamespace\DummyClassInterface;
+
+class DummyClassService extends BaseService
+{
+    protected $DummyClassRepository;
+    protected $auth;
+
+    public function __construct( DummyClassInterface $DummyClassRepository, AuthManager $auth ) {
+        $this->DummyClassRepository = $DummyClassRepository;
+        $this->auth = $auth;
+    }
+
+    /**
+     * list
+     *
+     * @return JsonResponse
+     */
+    public function list(): JsonResponse {
+        $list = $this->DummyClassRepository->paginate(
+            $this->DummyClassRepository->getAll(),
+            request()->input('prePage'),
+            request()->input('sortBy'),
+            request()->input('orderBy')
+        );
+
+        return DummyClassTransform::response(compact('list'));
+    }
+
+    /**
+     * detail
+     *
+     * @param Model $DummyModel
+     * @return JsonResponse
+     */
+    public function detail($DummyModel): JsonResponse
+    {
+        $DummyModelDetail = DummyModel->load('');
+
+        return DummyClassTransform::response(compact('DummyModelDetail'));
+    }
+
+    /**
+     * store
+     *
+     * @return \Illuminate\Http\JsonResponse
+     * @throws \Throwable
+     */
+    public function store(): \Illuminate\Http\JsonResponse
+    {
+        try {
+            DB::beginTransaction();
+
+            // 取得 記錄在 model 的欄位常數
+            $fields = $this->DummyClassRepository->getConstants('FIELDS');
+            // 取得 要變更的參數
+            $params = $this->transformRequestParameters(request(), $fields);
+
+            $this->DummyClassRepository->createOrUpdateFromArray($params);
+
+            // 根據需求，可以新增其他的關聯欄位
+
+            DB::commit();
+
+            return json_response()->success([
+                'message' => 'DummyNamespace Created Successfully',
+            ]);
+        } catch (\Throwable $e) {
+            Log::error('Error store DummyNamespace: ' . $e->getMessage() . ' at ' . $e->getFile() . ':' . $e->getLine());
+            DB::rollBack();
+            return json_response()->failed($this->errorCode('SYSTEM_ERROR'), $e->getMessage());
+        }
+    }
+
+    /**
+     * update
+     *
+     * @param Model $DummyModel
+     * @return \Illuminate\Http\JsonResponse
+     * @throws \Throwable
+     */
+    public function update($DummyModel): \Illuminate\Http\JsonResponse
+    {
+        try {
+            DB::beginTransaction();
+
+            // 取得 記錄在 model 的欄位常數
+            $fields = $this->DummyClassRepository->getConstants('FIELDS');
+            // 取得 要變更的參數
+            $params = $this->transformRequestParameters(request(), $fields);
+
+            $DummyModel->fill($params);
+
+            // 根據需求，可以新增其他的關聯欄位
+
+            $DummyModel->save();
+
+            DB::commit();
+
+            return json_response()->success([
+                'message' => 'DummyNamespace Update Successfully',
+            ]);
+        } catch (\Throwable $e) {
+            Log::error('Error update DummyNamespace: ' . $e->getMessage() . ' at ' . $e->getFile() . ':' . $e->getLine());
+            DB::rollBack();
+            return json_response()->failed($this->errorCode('SYSTEM_ERROR'), $e->getMessage());
+        }
+    }
+
+    /**
+     * destroy
+     *
+     * @param Model $DummyModel
+     * @return \Illuminate\Http\JsonResponse
+     * @throws \Throwable
+     */
+    public function destroy($DummyModel): \Illuminate\Http\JsonResponse
+    {
+        try {
+            // 根據需求，其他限制邏輯 ...
+
+            $DummyModel->delete();
+
+            return json_response()->success([
+                'message' => 'DummyNamespace Delete Successfully',
+            ]);
+        } catch (\Throwable $e) {
+            Log::error('Error delete DummyNamespace: ' . $e->getMessage() . ' at ' . $e->getFile() . ':' . $e->getLine());
+            return json_response()->failed($this->errorCode('SYSTEM_ERROR'), $e->getMessage());
+        }
+    }
+}
