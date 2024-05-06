@@ -2,6 +2,7 @@
     "name": "yfdev/system",
     "description": "英富開發 後台包",
     "type": "metapackage",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "YFDev\\System\\": "src/",
